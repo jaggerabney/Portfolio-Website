@@ -1,0 +1,33 @@
+.text {
+  color: #8516da;
+  font-size: 48px;
+  font-weight: 900;
+  padding-top: 2rem;
+  width: 90%;
+}
+
+.pipe {
+  color: black;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.pipe-idle {
+  animation: 1s blink step-end infinite;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
