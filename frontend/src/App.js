@@ -1,8 +1,7 @@
 import Navbar from "./components/Navbar/Navbar";
-import Heading from "./components/UI/Heading/Heading";
+import Typewriter from "./components/UI/Typewriter/Typewriter";
 
 import classes from "./App.module.css";
-import Typewriter from "./components/UI/Typewriter/Typewriter";
 
 function App() {
   return (
