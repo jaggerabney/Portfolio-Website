@@ -2,8 +2,6 @@
   color: #8516da;
   font-size: 48px;
   font-weight: 900;
-  padding-top: 2rem;
-  width: 90%;
 }
 
 .pipe {
@@ -19,6 +17,8 @@
 .wrapper {
   display: flex;
   flex-direction: row;
+  width: 90%;
+  padding-top: 1.5rem;
 }
 
 @keyframes blink {
