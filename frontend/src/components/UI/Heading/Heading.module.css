@@ -1,6 +1,4 @@
-.heading {
-  color: #8516da;
-  font-size: 48px;
-  font-weight: 900;
+.wrapper {
+  padding-top: 2rem;
   width: 90%;
 }
