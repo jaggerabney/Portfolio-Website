@@ -1,5 +1,11 @@
 .wrapper {
-  width: 80%;
-  height: 80vh;
-  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./images/Home.jpg");
+  background-color: #232c18;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-attachment: initial;
+  background-position: center top;
+  overflow-x: hidden;
 }
