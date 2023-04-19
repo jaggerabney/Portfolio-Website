@@ -12,7 +12,7 @@ export default function Typewriter({ text }) {
       setTimeout(() => {
         setCurrentText(currentText + text[index]);
         setIndex(index + 1);
-      }, 50);
+      }, 33);
     } else {
       setDoneTyping(true);
     }
