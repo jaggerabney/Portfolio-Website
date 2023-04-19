@@ -1,4 +1,4 @@
-import Typewriter from "../UI/Typewriter/Typewriter";
+import Typewriter from "../../UI/Typewriter/Typewriter";
 
 import classes from "./Home.module.css";
 

@@ -16,7 +16,7 @@ export default function Typewriter({ text }) {
     } else {
       setDoneTyping(true);
     }
-  }, [index]);
+  }, [index]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={classes.wrapper}>
