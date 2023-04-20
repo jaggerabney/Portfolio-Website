@@ -1,9 +1,11 @@
 .navbar {
-  margin: auto;
+  position: absolute;
+  top: 0;
   width: 80%;
+  height: 10vh;
   border-bottom: 1px solid #f5f5f5;
   color: #f5f5f5;
-  padding: 0.5rem;
+  scroll-snap-align: start;
 }
 
 .navbar__list {
@@ -12,7 +14,7 @@
   justify-content: space-evenly;
   list-style: none;
   padding-inline-start: 0;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 200;
 }
 

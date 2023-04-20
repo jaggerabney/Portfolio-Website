@@ -8,4 +8,13 @@
   background-attachment: initial;
   background-position: center top;
   overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.page-content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
