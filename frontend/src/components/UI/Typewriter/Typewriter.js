@@ -12,11 +12,11 @@ export default function Typewriter({ text }) {
       setTimeout(() => {
         setCurrentText(currentText + text[index]);
         setIndex(index + 1);
-      }, 50);
+      }, 33);
     } else {
       setDoneTyping(true);
     }
-  }, [index]);
+  }, [index]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={classes.wrapper}>

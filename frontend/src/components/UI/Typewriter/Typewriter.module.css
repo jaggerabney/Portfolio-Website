@@ -1,12 +1,12 @@
 .text {
-  color: #8516da;
-  font-size: 48px;
+  color: #f5f5f5;
+  font-size: 60px;
   font-weight: 900;
 }
 
 .pipe {
-  color: black;
-  font-size: 48px;
+  color: #ccc;
+  font-size: 60px;
   font-weight: 400;
 }
 
