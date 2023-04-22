@@ -47,6 +47,7 @@
   margin: 1vh;
   padding: 0 0.5vh;
   white-space: nowrap;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .tab-bar {
@@ -63,10 +64,10 @@
 
 .line-numbers {
   font-family: "Courier New", Courier, monospace;
-  color: #f5f5f5;
+  color: #ccc;
   display: flex;
   flex-direction: column;
-  gap: 0.6vh;
+  gap: 0.8vh;
   width: min-content;
   margin: 2vh;
   text-align: right;
@@ -75,8 +76,9 @@
 .text-area {
   display: flex;
   flex-direction: column;
-  gap: 0.6vh;
+  gap: 0.8vh;
   margin: 2vh;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .field {
