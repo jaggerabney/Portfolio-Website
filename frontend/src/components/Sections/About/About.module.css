@@ -4,5 +4,4 @@
   display: flex;
   flex-direction: column;
   padding: 10vh 0;
-  scroll-snap-align: start;
 }

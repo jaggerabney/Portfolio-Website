@@ -9,7 +9,6 @@
   background-position: center top;
   overflow-x: hidden;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
 }
 
 .page-content {

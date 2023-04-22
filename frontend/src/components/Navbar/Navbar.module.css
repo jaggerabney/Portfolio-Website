@@ -1,11 +1,11 @@
 .navbar {
-  position: absolute;
+  position: sticky;
   top: 0;
-  width: 80%;
+  width: 100%;
   height: 10vh;
   border-bottom: 1px solid #f5f5f5;
   color: #f5f5f5;
-  scroll-snap-align: start;
+  z-index: 100;
 }
 
 .navbar__list {

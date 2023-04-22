@@ -3,8 +3,8 @@
   height: 80vh;
   display: flex;
   flex-direction: column;
-  padding: 10vh 0;
-  scroll-snap-align: start;
+  margin: 0;
+  z-index: 10;
 }
 
 .spacer {
