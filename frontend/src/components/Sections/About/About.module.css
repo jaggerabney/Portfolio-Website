@@ -5,3 +5,9 @@
   flex-direction: column;
   padding: 10vh 0;
 }
+
+.windows {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}

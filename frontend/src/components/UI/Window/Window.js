@@ -1,13 +1,23 @@
+import meImage from "../../../images/me_cropped.jpg";
+
 import classes from "./Window.module.css";
 
 export default function Window(props) {
   return (
-    <div className={classes.background}>
+    <div className={`${classes.background} ${props.className}`}>
       <div className={classes["top-bar"]}>
         <div className={`${classes["action-button"]} ${classes.close}`} />
         <div className={`${classes["action-button"]} ${classes.minimize}`} />
         <div className={`${classes["action-button"]} ${classes.fullscreen}`} />
       </div>
+      <div>{props.children}</div>
+    </div>
+  );
+}
+
+export function CodeWindow() {
+  return (
+    <Window className={classes["code-window"]}>
       <div className={classes["lower-bar"]}>
         <div className={classes.tab}>about-me.json</div>
         <div className={classes["tab-bar"]} />
@@ -144,6 +154,14 @@ export default function Window(props) {
           </div>
         </div>
       </div>
-    </div>
+    </Window>
+  );
+}
+
+export function ImageWindow() {
+  return (
+    <Window className={classes["image-window"]}>
+      <img className={classes.image} src={meImage} alt="Me!" />
+    </Window>
   );
 }
