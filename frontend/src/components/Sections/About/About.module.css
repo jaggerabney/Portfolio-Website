@@ -9,5 +9,5 @@
 .windows {
   display: flex;
   flex-direction: row;
-  gap: 5%;
+  gap: 5vh;
 }

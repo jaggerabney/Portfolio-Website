@@ -72,7 +72,7 @@ export function CodeWindow() {
             <span className={classes.field}>"fluent"</span>:{" "}
             <span className={classes.array}>[</span>
             <span className={classes.value}>"Java"</span>,{" "}
-            <span className={classes.value}>"HTML"</span>,
+            <span className={classes.value}>"HTML"</span>,{" "}
             <span className={classes.value}>"CSS"</span>,{" "}
             <span className={classes.value}>"JavaScript"</span>
             <span className={classes.array}>]</span>,
@@ -82,7 +82,7 @@ export function CodeWindow() {
             <span className={classes.field}>"familiar"</span>:{" "}
             <span className={classes.array}>[</span>
             <span className={classes.value}>"Python"</span>,{" "}
-            <span className={classes.value}>"C++"</span>,
+            <span className={classes.value}>"C++"</span>,{" "}
             <span className={classes.value}>"C#"</span>,{" "}
             <span className={classes.value}>"SQL"</span>,{" "}
             <span className={classes.value}>"NoSQL"</span>
@@ -102,7 +102,7 @@ export function CodeWindow() {
             <span className={classes.field}>"fluent"</span>:{" "}
             <span className={classes.array}>[</span>
             <span className={classes.value}>"React"</span>,{" "}
-            <span className={classes.value}>"NodeJS"</span>,
+            <span className={classes.value}>"NodeJS"</span>,{" "}
             <span className={classes.value}>"Express"</span>,{" "}
             <span className={classes.value}>"MongoDB"</span>
             <span className={classes.array}>]</span>,
@@ -111,7 +111,7 @@ export function CodeWindow() {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span className={classes.field}>"familiar"</span>:{" "}
             <span className={classes.array}>[</span>
-            <span className={classes.value}>"Next.js"</span>,
+            <span className={classes.value}>"Next.js"</span>,{" "}
             <span className={classes.value}>"React Native"</span>,{" "}
             <span className={classes.value}>"MySQL"</span>
             <span className={classes.array}>]</span>
@@ -142,7 +142,7 @@ export function CodeWindow() {
           </div>
           <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span className={classes.field}>"earned"</span>:
+            <span className={classes.field}>"earned"</span>:{" "}
             <span className={classes.value}>"2021-12-21T04:56:59.000Z"</span>{" "}
             <span className={classes.comment}>// December 2021</span>
           </div>
