@@ -12,8 +12,8 @@ const DUMMY_DATA = {
     familiar: ["Python", "C++", "C#", "SQL", "NoSQL"],
   },
   technologies: {
-    fluent: ["React", "NodeJS", "Express", "MongoDB"],
-    familiar: ["Next.js", "React Native", "MySQL"],
+    fluent: ["React", "NodeJS", "Express", "MongoDB", "Next.js"],
+    familiar: ["React Native", "MySQL"],
   },
   education: {
     college: "Highline College",
@@ -24,9 +24,20 @@ const DUMMY_DATA = {
 };
 
 export default function CodeWindow() {
-  const numLines = JSON.stringify(DUMMY_DATA, null, 1).split(/\n/g).length;
+  function replacer(key, value) {
+    if (value instanceof Array) {
+      return JSON.stringify(value);
+    }
 
-  console.log(formatJson(JSON.stringify(DUMMY_DATA)));
+    return value;
+  }
+
+  const code = formatJson(JSON.stringify(DUMMY_DATA, replacer, 4))
+    .replace(/"\[/g, "[")
+    .replace(/\]"/g, "]")
+    .replace(/\\"/g, '"')
+    .replace(/""/g, '"');
+  const numLines = code.split(/\n/g).length;
 
   return (
     <Window className={classes.window}>
@@ -45,7 +56,7 @@ export default function CodeWindow() {
         <pre
           className={classes.code}
           dangerouslySetInnerHTML={{
-            __html: formatJson(JSON.stringify(DUMMY_DATA, null, 4)),
+            __html: code,
           }}
         ></pre>
       </section>

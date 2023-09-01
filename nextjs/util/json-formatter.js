@@ -8,7 +8,7 @@ export default function formatJson(json) {
 
   return json.replace(
     /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-    function (match) {
+    (match) => {
       var cls = classes.number;
 
       if (/^"/.test(match)) {

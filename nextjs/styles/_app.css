@@ -27,3 +27,9 @@ body {
 .content h1 {
   color: white;
 }
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
