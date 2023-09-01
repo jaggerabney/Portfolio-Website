@@ -1,5 +1,5 @@
-import Typewriter from "../components/Typewriter/Typewriter";
+import Home from "../components/Sections/Home/Home";
 
-export default function Home() {
-  return <Typewriter text="Hey! I'm Jagger. Welcome to my website." />;
+export default function HomePage() {
+  return <Home />;
 }
