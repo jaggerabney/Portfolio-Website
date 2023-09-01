@@ -1,9 +1,9 @@
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Sections/Home/Home";
 import About from "./components/Sections/About/About";
+import Work from "./components/Sections/Work/Work";
 
 import "./App.css";
-import Work from "./components/Sections/Work/Work";
 
 function App() {
   return (
