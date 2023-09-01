@@ -9,7 +9,7 @@ export default function About() {
       <Typewriter text="Here's a little bit about me." />
       <div className={classes.windows}>
         <CodeWindow />
-        <ImageWindow />
+        {/* <ImageWindow /> */}
       </div>
     </section>
   );

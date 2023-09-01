@@ -12,19 +12,3 @@
   flex: 1;
   gap: 5vh;
 }
-
-.window {
-  display: flex;
-  flex-direction: row;
-  gap: 1vw;
-}
-
-.numbers li {
-  list-style: none;
-  font-family: "Courier New", Courier, monospace;
-  text-align: right;
-}
-
-.code {
-  font-family: "Courier New", Courier, monospace;
-}
