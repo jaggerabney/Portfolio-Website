@@ -12,12 +12,7 @@ export default function App({ Component, pageProps }) {
         <Navbar />
         <Component {...pageProps} />
       </div>
-      <BackgroundImage
-        src={bgImage}
-        alt="Background"
-        height={1080}
-        width={1920}
-      />
+      <BackgroundImage src={bgImage} alt="Background" />
       <BackgroundBlur />
     </div>
   );
