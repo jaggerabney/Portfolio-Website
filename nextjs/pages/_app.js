@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar/Navbar";
-import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
-import BackgroundBlur from "../components/BackgroundBlur/BackgroundBlur";
+import Navbar from "../components/Layout/Navbar/Navbar";
+import BackgroundImage from "../components/Layout/BackgroundImage/BackgroundImage";
+import BackgroundBlur from "../components/Layout/BackgroundBlur/BackgroundBlur";
 import bgImage from "../public/images/Home.jpg";
 
 import "../styles/_app.css";
