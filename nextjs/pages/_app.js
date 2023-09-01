@@ -8,6 +8,10 @@ import "../styles/_app.css";
 export default function App({ Component, pageProps }) {
   return (
     <div className="app">
+      <div className="content">
+        <Navbar />
+        <Component {...pageProps} />
+      </div>
       <BackgroundImage
         src={bgImage}
         alt="Background"
@@ -15,8 +19,6 @@ export default function App({ Component, pageProps }) {
         width={1920}
       />
       <BackgroundBlur />
-      <Component {...pageProps} />
-      <Navbar />
     </div>
   );
 }
