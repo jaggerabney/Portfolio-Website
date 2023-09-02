@@ -1,0 +1,24 @@
+.image {
+  width: 45vw;
+  height: auto;
+}
+
+.description {
+  color: #f5f5f5;
+  font-size: 18px;
+  font-weight: 200;
+  padding: 2vh;
+  padding-top: 0;
+  margin: 0;
+}
+
+.preview {
+  width: auto;
+}
+
+.title {
+  color: #f5f5f5;
+  font-weight: 600;
+  padding: 2vh;
+  margin: 0;
+}

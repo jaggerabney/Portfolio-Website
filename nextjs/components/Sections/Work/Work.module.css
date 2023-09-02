@@ -1,0 +1,15 @@
+.content {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-top: 10vh;
+}
+
+.windows {
+  display: flex;
+  flex-direction: row;
+  gap: 5vh;
+  width: 150vw;
+}

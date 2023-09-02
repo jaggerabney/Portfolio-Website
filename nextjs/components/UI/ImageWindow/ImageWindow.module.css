@@ -1,4 +1,9 @@
 .image {
   height: 65vh;
   width: auto;
+  overflow: hidden;
+}
+
+.window {
+  overflow: hidden;
 }
