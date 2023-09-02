@@ -8,8 +8,8 @@ const DUMMY_DATA = {
   age: 22,
   pronouns: "he/him",
   languages: {
-    fluent: ["Java", "HTML", "CSS", "JavaScript"],
-    familiar: ["Python", "C++", "C#", "SQL", "NoSQL"],
+    fluent: ["Java", "HTML", "CSS", "JavaScript", "NoSQL"],
+    familiar: ["Python", "C++", "C#", "SQL"],
   },
   technologies: {
     fluent: ["React", "NodeJS", "Express", "MongoDB", "Next.js"],
@@ -23,19 +23,11 @@ const DUMMY_DATA = {
   },
 };
 
-export default function CodeWindow() {
-  function replacer(key, value) {
-    if (value instanceof Array) {
-      return `<span className=${classes.bracket}>[</span>`;
-    }
-
-    return value;
-  }
-
+export default function CodeWindow({ outerClassName }) {
   const code = formatJson(
     JSON.stringify(
       DUMMY_DATA,
-      function (k, v) {
+      (k, v) => {
         if (v instanceof Array) return JSON.stringify(v);
         return v;
       },
@@ -50,7 +42,7 @@ export default function CodeWindow() {
   const numLines = code.split(/\n/g).length;
 
   return (
-    <Window className={classes.window}>
+    <Window innerClassName={classes.window} outerClassName={outerClassName}>
       <section>
         <div className={classes["lower-bar"]}>
           <div className={classes.tab}>about-me.json</div>
@@ -59,7 +51,7 @@ export default function CodeWindow() {
       </section>
       <section className={classes.editor}>
         <ul className={classes.numbers}>
-          {Array.from({ length: numLines }, (x, i) => i).map((num) => (
+          {Array.from({ length: numLines }, (x, i) => i + 1).map((num) => (
             <li key={num}>{num}</li>
           ))}
         </ul>

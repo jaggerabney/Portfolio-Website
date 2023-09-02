@@ -7,6 +7,13 @@
 .windows {
   display: flex;
   flex-direction: row;
-  flex: 1;
   gap: 5vh;
+}
+
+.code {
+  flex: 2;
+}
+
+.image {
+  flex: 1;
 }
