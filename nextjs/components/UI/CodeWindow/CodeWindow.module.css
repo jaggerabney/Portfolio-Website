@@ -43,6 +43,9 @@
 .key {
   color: #9cdcfe;
 }
+.string .bracket {
+  color: #f5f5f5;
+}
 
 .editor {
   display: flex;

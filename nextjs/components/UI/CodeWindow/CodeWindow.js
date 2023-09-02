@@ -26,17 +26,27 @@ const DUMMY_DATA = {
 export default function CodeWindow() {
   function replacer(key, value) {
     if (value instanceof Array) {
-      return JSON.stringify(value);
+      return `<span className=${classes.bracket}>[</span>`;
     }
 
     return value;
   }
 
-  const code = formatJson(JSON.stringify(DUMMY_DATA, replacer, 4))
-    .replace(/"\[/g, "[")
-    .replace(/\]"/g, "]")
-    .replace(/\\"/g, '"')
-    .replace(/""/g, '"');
+  const code = formatJson(
+    JSON.stringify(
+      DUMMY_DATA,
+      function (k, v) {
+        if (v instanceof Array) return JSON.stringify(v);
+        return v;
+      },
+      4
+    )
+      .replace(/\\/g, "")
+      .replace(/\"\[/g, "[")
+      .replace(/\]\"/g, "]")
+      .replace(/\"\{/g, "{")
+      .replace(/\}\"/g, "}")
+  );
   const numLines = code.split(/\n/g).length;
 
   return (

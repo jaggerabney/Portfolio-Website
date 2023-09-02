@@ -22,6 +22,7 @@ export default function formatJson(json) {
       } else if (/null/.test(match)) {
         cls = classes.null;
       }
+
       return '<span class="' + cls + '">' + match + "</span>";
     }
   );
