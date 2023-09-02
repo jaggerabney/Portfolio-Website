@@ -45,7 +45,10 @@ export default function CodeWindow({ outerClassName }) {
     <Window innerClassName={classes.window} outerClassName={outerClassName}>
       <section>
         <div className={classes["lower-bar"]}>
-          <div className={classes.tab}>about-me.json</div>
+          <div className={classes.tab}>
+            <span className={classes.logo}>{"{...}"}</span>
+            about-me.json
+          </div>
           <div className={classes["tab-bar"]} />
         </div>
       </section>
