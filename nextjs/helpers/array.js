@@ -1,3 +1,5 @@
+import { DUMMY_WORK } from "../components/UI/WorkCarousel/Carousel";
+
 export function increment(array, index) {
   return index === array.length - 1 ? 0 : index + 1;
 }

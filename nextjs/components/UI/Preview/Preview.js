@@ -9,8 +9,6 @@ export default function Preview({
   title,
   description,
 }) {
-  console.log(className);
-
   return (
     <Window outerClassName={className} innerClassName={classes.preview}>
       <a href={link} target="_blank" rel="noreferrer">

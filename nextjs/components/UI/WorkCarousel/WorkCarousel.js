@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import Preview from "../Preview/Preview";
 import { increment, decrement } from "../../../util/array";
 
 import classes from "./Carousel.module.css";
