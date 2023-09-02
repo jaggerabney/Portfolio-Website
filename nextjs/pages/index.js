@@ -4,13 +4,13 @@ import Work from "../components/Sections/Work/Work";
 import Blog from "../components/Sections/Blog/Blog";
 import { getAllPosts } from "../util/posts";
 
-export default function HomePage() {
+export default function HomePage({ posts }) {
   return (
     <div className="sections">
       <Home />
       <About />
       <Work />
-      <Blog />
+      <Blog posts={posts} />
     </div>
   );
 }

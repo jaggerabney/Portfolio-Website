@@ -1,5 +1,5 @@
 import Typewriter from "../../UI/Typewriter/Typewriter";
-import Carousel from "../../UI/Carousel/Carousel";
+import WorkCarousel from "../../UI/WorkCarousel/WorkCarousel";
 
 import classes from "./Work.module.css";
 
@@ -40,7 +40,7 @@ export default function Work() {
   return (
     <section className={classes.content}>
       <Typewriter text="How about a look at my work?" />
-      <Carousel data={DUMMY_WORK} />
+      <WorkCarousel data={DUMMY_WORK} />
     </section>
   );
 }

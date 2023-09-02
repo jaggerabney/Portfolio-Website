@@ -14,7 +14,7 @@ export default function Preview({
       <a href={link} target="_blank" rel="noreferrer">
         <img
           className={classes.image}
-          src={`../../../images/${imageName}`}
+          src={`../../../images/work/${imageName}`}
           alt={title}
         />
       </a>

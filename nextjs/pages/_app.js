@@ -1,7 +1,7 @@
 import Navbar from "../components/Layout/Navbar/Navbar";
 import BackgroundImage from "../components/Layout/BackgroundImage/BackgroundImage";
 import BackgroundBlur from "../components/Layout/BackgroundBlur/BackgroundBlur";
-import bgImage from "../public/images/Home.jpg";
+import bgImage from "../public/images/backgrounds/Home.jpg";
 
 import "../styles/_app.css";
 

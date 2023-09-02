@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 
+import Preview from "../Preview/Preview";
 import { increment, decrement } from "../../../util/array";
 
-import classes from "./Carousel.module.css";
+import classes from "./WorkCarousel.module.css";
 
-export default function Carousel({ data }) {
+export default function WorkCarousel({ data }) {
   const [activeWindowIndex, setActiveWindowIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState();
 
