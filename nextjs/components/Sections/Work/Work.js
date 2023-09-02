@@ -34,13 +34,21 @@ const DUMMY_WORK = [
     description: `My final project for CSCI 102 - Website Development - at Highline College.
       It's a mock company website for a photography company based in the world of Dark Souls 3.
       It was made using just HTML, CSS, and JavaScript. While it's not as impressive as my other projects,
-      this was my first foray into web development, and I'm still proud of it.`,
+      I'm still proud of it.`,
   },
 ];
 
 export default function Work() {
   const [activeWindowIndex, setActiveWindowIndex] = useState(0);
   const activeWindow = DUMMY_WORK[activeWindowIndex];
+  const nextWindow =
+    DUMMY_WORK[
+      activeWindowIndex === DUMMY_WORK.length - 1 ? 0 : activeWindowIndex + 1
+    ];
+  const prevWindow =
+    DUMMY_WORK[
+      activeWindowIndex === 0 ? DUMMY_WORK.length - 1 : activeWindowIndex - 1
+    ];
 
   function changeActiveWindowHandler(direction) {
     if (direction === "left") {
@@ -66,28 +74,56 @@ export default function Work() {
     <section className={classes.content}>
       <Typewriter text="How about a look at my work?" />
       <div className={classes.container}>
+        <div className={classes.window}>
+          {prevWindow && (
+            <>
+              <Preview
+                key={prevWindow.id}
+                link={null}
+                imageName={prevWindow.imageName}
+                title={prevWindow.title}
+                description={prevWindow.description}
+              />
+            </>
+          )}
+        </div>
         <div
-          className={classes.button}
+          className={`${classes.button} ${classes.left}`}
           onClick={changeActiveWindowHandler.bind(this, "left")}
         >
           {"<"}
         </div>
         <div className={classes.window}>
           {activeWindow && (
-            <Preview
-              key={activeWindow.id}
-              link={activeWindow.link}
-              imageName={activeWindow.imageName}
-              title={activeWindow.title}
-              description={activeWindow.description}
-            />
+            <>
+              <Preview
+                key={activeWindow.id}
+                link={activeWindow.link}
+                imageName={activeWindow.imageName}
+                title={activeWindow.title}
+                description={activeWindow.description}
+              />
+            </>
           )}
         </div>
         <div
-          className={classes.button}
+          className={`${classes.button} ${classes.right}`}
           onClick={changeActiveWindowHandler.bind(this, "right")}
         >
           {">"}
+        </div>
+        <div className={classes.window}>
+          {nextWindow && (
+            <>
+              <Preview
+                key={nextWindow.id}
+                link={null}
+                imageName={nextWindow.imageName}
+                title={nextWindow.title}
+                description={nextWindow.description}
+              />
+            </>
+          )}
         </div>
       </div>
     </section>

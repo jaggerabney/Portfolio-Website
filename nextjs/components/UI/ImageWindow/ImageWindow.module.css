@@ -4,8 +4,8 @@
 
 .image {
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 70vh;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 }
