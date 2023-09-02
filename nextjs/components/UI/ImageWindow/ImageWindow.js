@@ -8,7 +8,13 @@ import classes from "./ImageWindow.module.css";
 export default function ImageWindow({ outerClassName }) {
   return (
     <Window innerClassName={classes.window} outerClassName={outerClassName}>
-      <Image className={classes.image} src={portrait} />
+      <Image
+        fill
+        sizes="500px"
+        style={{ objectFit: "cover" }}
+        className={classes.image}
+        src={portrait}
+      />
     </Window>
   );
 }

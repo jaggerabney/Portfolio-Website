@@ -1,11 +1,11 @@
 .window {
-  width: 100%;
+  position: relative;
+  height: calc(100% - 5vh);
+  overflow: hidden;
 }
 
 .image {
-  display: block;
-  width: auto;
-  height: 70vh;
+  display: inline;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 }
