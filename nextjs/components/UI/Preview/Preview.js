@@ -2,9 +2,17 @@ import Window from "../Window/Window";
 
 import classes from "./Preview.module.css";
 
-export default function Preview({ imageName, link, title, description }) {
+export default function Preview({
+  className,
+  imageName,
+  link,
+  title,
+  description,
+}) {
+  console.log(className);
+
   return (
-    <Window outerClassName={classes.preview} innerClassName={classes.preview}>
+    <Window outerClassName={className} innerClassName={classes.preview}>
       <a href={link} target="_blank" rel="noreferrer">
         <img
           className={classes.image}

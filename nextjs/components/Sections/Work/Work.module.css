@@ -24,6 +24,14 @@
   z-index: 0;
 }
 
+.left {
+  animation: 0.5s ease-in-out forwards slide-left;
+}
+
+.right {
+  animation: 0.5s ease-in-out forwards slide-right;
+}
+
 .button {
   border: 1px solid #252526;
   background-color: #525256;
@@ -38,17 +46,43 @@
   align-items: center;
   cursor: pointer;
   position: absolute;
+  user-select: none;
   z-index: 10;
 }
 
-.left {
+.leftButton {
   left: 11vw;
 }
 
-.right {
+.rightButton {
   right: 11vw;
 }
 
 .button:hover {
   background-color: #303030;
+}
+
+@keyframes slide-left {
+  from {
+    /* 
+      Previews move instantaneously via a state update, so this animation puts them
+      back to where they were pre-update and slides them over
+    */
+
+    transform: translate(-52vw);
+  }
+
+  to {
+    transform: 0;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translate(52vw);
+  }
+
+  to {
+    transform: 0;
+  }
 }

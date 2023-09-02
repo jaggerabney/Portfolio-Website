@@ -38,35 +38,39 @@ const DUMMY_WORK = [
   },
 ];
 
+function increment(index) {
+  return index === DUMMY_WORK.length - 1 ? 0 : index + 1;
+}
+
+function decrement(index) {
+  return index === 0 ? DUMMY_WORK.length - 1 : index - 1;
+}
+
 export default function Work() {
   const [activeWindowIndex, setActiveWindowIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState();
+
   const activeWindow = DUMMY_WORK[activeWindowIndex];
-  const nextWindow =
-    DUMMY_WORK[
-      activeWindowIndex === DUMMY_WORK.length - 1 ? 0 : activeWindowIndex + 1
-    ];
-  const prevWindow =
-    DUMMY_WORK[
-      activeWindowIndex === 0 ? DUMMY_WORK.length - 1 : activeWindowIndex - 1
-    ];
+  const nextWindow = DUMMY_WORK[increment(activeWindowIndex)];
+  const prevWindow = DUMMY_WORK[decrement(activeWindowIndex)];
+
+  useEffect(() => {
+    let timer;
+
+    if (slideDirection != null) {
+      timer = setTimeout(() => setSlideDirection(null), 500);
+    }
+
+    return () => clearTimeout(timer);
+  }, [slideDirection]);
 
   function changeActiveWindowHandler(direction) {
     if (direction === "left") {
-      setActiveWindowIndex((prevIndex) => {
-        if (prevIndex === 0) {
-          return DUMMY_WORK.length - 1;
-        } else {
-          return prevIndex - 1;
-        }
-      });
+      setSlideDirection("left");
+      setActiveWindowIndex((prevIndex) => decrement(prevIndex));
     } else if (direction === "right") {
-      setActiveWindowIndex((prevIndex) => {
-        if (prevIndex === DUMMY_WORK.length - 1) {
-          return 0;
-        } else {
-          return prevIndex + 1;
-        }
-      });
+      setSlideDirection("right");
+      setActiveWindowIndex((prevIndex) => increment(prevIndex));
     }
   }
 
@@ -74,57 +78,56 @@ export default function Work() {
     <section className={classes.content}>
       <Typewriter text="How about a look at my work?" />
       <div className={classes.container}>
-        <div className={classes.window}>
-          {prevWindow && (
-            <>
-              <Preview
-                key={prevWindow.id}
-                link={null}
-                imageName={prevWindow.imageName}
-                title={prevWindow.title}
-                description={prevWindow.description}
-              />
-            </>
-          )}
-        </div>
+        {prevWindow && (
+          <Preview
+            className={slideDirection ? classes[slideDirection] : ""}
+            key={prevWindow.id}
+            link={null}
+            imageName={prevWindow.imageName}
+            title={prevWindow.title}
+            description={prevWindow.description}
+          />
+        )}
         <div
-          className={`${classes.button} ${classes.left}`}
-          onClick={changeActiveWindowHandler.bind(this, "left")}
+          className={`${classes.button} ${classes.leftButton}`}
+          onClick={
+            !slideDirection
+              ? changeActiveWindowHandler.bind(this, "left")
+              : undefined
+          }
         >
           {"<"}
         </div>
-        <div className={classes.window}>
-          {activeWindow && (
-            <>
-              <Preview
-                key={activeWindow.id}
-                link={activeWindow.link}
-                imageName={activeWindow.imageName}
-                title={activeWindow.title}
-                description={activeWindow.description}
-              />
-            </>
-          )}
-        </div>
+        {activeWindow && (
+          <Preview
+            className={slideDirection ? classes[slideDirection] : ""}
+            key={activeWindow.id}
+            link={activeWindow.link}
+            imageName={activeWindow.imageName}
+            title={activeWindow.title}
+            description={activeWindow.description}
+          />
+        )}
         <div
-          className={`${classes.button} ${classes.right}`}
-          onClick={changeActiveWindowHandler.bind(this, "right")}
+          className={`${classes.button} ${classes.rightButton}`}
+          onClick={
+            !slideDirection
+              ? changeActiveWindowHandler.bind(this, "right")
+              : undefined
+          }
         >
           {">"}
         </div>
-        <div className={classes.window}>
-          {nextWindow && (
-            <>
-              <Preview
-                key={nextWindow.id}
-                link={null}
-                imageName={nextWindow.imageName}
-                title={nextWindow.title}
-                description={nextWindow.description}
-              />
-            </>
-          )}
-        </div>
+        {nextWindow && (
+          <Preview
+            className={slideDirection ? classes[slideDirection] : ""}
+            key={nextWindow.id}
+            link={null}
+            imageName={nextWindow.imageName}
+            title={nextWindow.title}
+            description={nextWindow.description}
+          />
+        )}
       </div>
     </section>
   );
