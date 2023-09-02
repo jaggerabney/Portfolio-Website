@@ -44,7 +44,9 @@ export default function Carousel() {
 
   const activeWindow = DUMMY_WORK[activeWindowIndex];
   const nextWindow = DUMMY_WORK[increment(activeWindowIndex)];
+  const nextNextWindow = DUMMY_WORK[increment(DUMMY_WORK.indexOf(nextWindow))];
   const prevWindow = DUMMY_WORK[decrement(activeWindowIndex)];
+  const prevPrevWindow = DUMMY_WORK[decrement(DUMMY_WORK.indexOf(prevWindow))];
 
   useEffect(() => {
     let timer;
@@ -68,16 +70,22 @@ export default function Carousel() {
 
   return (
     <div className={classes.container}>
-      {prevWindow && (
-        <Preview
-          className={slideDirection ? classes[slideDirection] : ""}
-          key={prevWindow.id}
-          link={null}
-          imageName={prevWindow.imageName}
-          title={prevWindow.title}
-          description={prevWindow.description}
-        />
-      )}
+      <Preview
+        className={slideDirection ? classes[slideDirection] : ""}
+        key={prevPrevWindow.id + Math.random()}
+        link={null}
+        imageName={prevPrevWindow.imageName}
+        title={prevPrevWindow.title}
+        description={prevPrevWindow.description}
+      />
+      <Preview
+        className={slideDirection ? classes[slideDirection] : ""}
+        key={prevWindow.id}
+        link={null}
+        imageName={prevWindow.imageName}
+        title={prevWindow.title}
+        description={prevWindow.description}
+      />
       <div
         className={`${classes.button} ${classes.leftButton}`}
         onClick={
@@ -88,16 +96,14 @@ export default function Carousel() {
       >
         {"<"}
       </div>
-      {activeWindow && (
-        <Preview
-          className={slideDirection ? classes[slideDirection] : ""}
-          key={activeWindow.id}
-          link={activeWindow.link}
-          imageName={activeWindow.imageName}
-          title={activeWindow.title}
-          description={activeWindow.description}
-        />
-      )}
+      <Preview
+        className={slideDirection ? classes[slideDirection] : ""}
+        key={activeWindow.id}
+        link={activeWindow.link}
+        imageName={activeWindow.imageName}
+        title={activeWindow.title}
+        description={activeWindow.description}
+      />
       <div
         className={`${classes.button} ${classes.rightButton}`}
         onClick={
@@ -108,16 +114,22 @@ export default function Carousel() {
       >
         {">"}
       </div>
-      {nextWindow && (
-        <Preview
-          className={slideDirection ? classes[slideDirection] : ""}
-          key={nextWindow.id}
-          link={null}
-          imageName={nextWindow.imageName}
-          title={nextWindow.title}
-          description={nextWindow.description}
-        />
-      )}
+      <Preview
+        className={slideDirection ? classes[slideDirection] : ""}
+        key={nextWindow.id}
+        link={null}
+        imageName={nextWindow.imageName}
+        title={nextWindow.title}
+        description={nextWindow.description}
+      />
+      <Preview
+        className={slideDirection ? classes[slideDirection] : ""}
+        key={nextNextWindow.id + Math.random()}
+        link={null}
+        imageName={nextNextWindow.imageName}
+        title={nextNextWindow.title}
+        description={nextNextWindow.description}
+      />
     </div>
   );
 }
