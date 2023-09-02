@@ -60,7 +60,7 @@
         back to where they were pre-update and slides them over
       */
 
-    transform: translate(-52vw);
+    transform: translate(-42vw);
   }
 
   to {
@@ -70,7 +70,7 @@
 
 @keyframes slide-right {
   from {
-    transform: translate(52vw);
+    transform: translate(42vw);
   }
 
   to {
