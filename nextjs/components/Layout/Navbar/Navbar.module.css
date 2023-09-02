@@ -1,16 +1,21 @@
 .navbar {
   position: sticky;
-  top: calc(1em + 14px);
+  display: flex;
+  margin: auto;
+  top: 0;
   width: 100%;
+  height: auto;
   border-bottom: 1px solid #f5f5f5;
   color: #f5f5f5;
-  z-index: 10;
+  backdrop-filter: blur(4px);
+  z-index: 20;
 }
 
 .navbar__list {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  flex-grow: 1;
   list-style: none;
   padding-inline-start: 0;
   font-size: 28px;
