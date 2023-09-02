@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import Typewriter from "../../UI/Typewriter/Typewriter";
 import Preview from "../../UI/Preview/Preview";
 
@@ -37,19 +39,56 @@ const DUMMY_WORK = [
 ];
 
 export default function Work() {
+  const [activeWindowIndex, setActiveWindowIndex] = useState(0);
+  const activeWindow = DUMMY_WORK[activeWindowIndex];
+
+  function changeActiveWindowHandler(direction) {
+    if (direction === "left") {
+      setActiveWindowIndex((prevIndex) => {
+        if (prevIndex === 0) {
+          return DUMMY_WORK.length - 1;
+        } else {
+          return prevIndex - 1;
+        }
+      });
+    } else if (direction === "right") {
+      setActiveWindowIndex((prevIndex) => {
+        if (prevIndex === DUMMY_WORK.length - 1) {
+          return 0;
+        } else {
+          return prevIndex + 1;
+        }
+      });
+    }
+  }
+
   return (
     <section className={classes.content}>
       <Typewriter text="How about a look at my work?" />
-      <div className={classes.windows}>
-        {DUMMY_WORK.map((work) => (
-          <Preview
-            key={work.id}
-            link={work.link}
-            imageName={work.imageName}
-            title={work.title}
-            description={work.description}
-          />
-        ))}
+      <div className={classes.container}>
+        <div
+          className={classes.button}
+          onClick={changeActiveWindowHandler.bind(this, "left")}
+        >
+          {"<"}
+        </div>
+        <div className={classes.window}>
+          {activeWindow && (
+            <Preview
+              key={activeWindow.id}
+              link={activeWindow.link}
+              imageName={activeWindow.imageName}
+              title={activeWindow.title}
+              description={activeWindow.description}
+            />
+          )}
+        </div>
+        <div
+          className={classes.button}
+          onClick={changeActiveWindowHandler.bind(this, "right")}
+        >
+          {">"}
+        </div>
       </div>
     </section>
   );
