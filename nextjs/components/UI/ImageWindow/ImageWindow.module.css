@@ -1,9 +1,11 @@
-.image {
-  height: 65vh;
-  width: auto;
-  overflow: hidden;
+.window {
+  height: 70vh;
 }
 
-.window {
-  overflow: hidden;
+.image {
+  display: block;
+  height: 100%;
+  width: auto;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
