@@ -6,14 +6,18 @@ import Window from "../Window/Window";
 import classes from "./BlogPreview.module.css";
 
 export default function BlogPreview({ post }) {
-  const { title, imageName, date, excerpt } = post;
+  const { slug, title, imageName, date, excerpt } = post;
+
+  console.log(post);
 
   return (
     <Window innerClassName={classes.window}>
-      <Link href={"/"}>
-        <img
+      <Link href={`/blog/${slug}`}>
+        <Image
           className={classes.image}
-          src={`../../../images/blog/${imageName}`}
+          src={`/images/blog/${imageName}`}
+          width={1920}
+          height={1080}
         />
       </Link>
       <div className={classes.content}>

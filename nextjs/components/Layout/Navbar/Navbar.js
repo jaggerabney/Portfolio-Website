@@ -1,14 +1,16 @@
 import classes from "./Navbar.module.css";
 
 export default function Navbar() {
+  const items = ["HOME", "ABOUT", "WORK", "BLOG", "CONTACT"];
+
   return (
     <nav className={classes.navbar}>
       <ul className={classes.navbar__list}>
-        <li className={classes.navbar__listItem}>HOME</li>
-        <li className={classes.navbar__listItem}>ABOUT</li>
-        <li className={classes.navbar__listItem}>WORK</li>
-        <li className={classes.navbar__listItem}>BLOG</li>
-        <li className={classes.navbar__listItem}>CONTACT</li>
+        {items.map((item) => (
+          <li key={item} className={classes.navbar__listItem}>
+            {item}
+          </li>
+        ))}
       </ul>
     </nav>
   );
