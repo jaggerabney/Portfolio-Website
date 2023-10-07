@@ -1,7 +1,10 @@
 .content {
   width: 100%;
+  height: 85vh;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  border: 1px dashed white;
 }
 
 .windows {

@@ -19,7 +19,8 @@ export function getAllPosts() {
   return sortedPosts;
 }
 
-export function getPostData(slug) {
+export function getPostData(postName) {
+  const slug = postName.replace(/\.md$/, "");
   const filePath = path.join(postsDirectory, `${slug}.md`);
   const fileData = fs.readFileSync(filePath, "utf-8");
 

@@ -2,6 +2,7 @@ import Home from "../components/Sections/Home/Home";
 import About from "../components/Sections/About/About";
 import Work from "../components/Sections/Work/Work";
 import Blog from "../components/Sections/Blog/Blog";
+import Contact from "../components/Sections/Contact/Contact";
 import { getAllPosts } from "../util/posts";
 
 export default function HomePage({ posts }) {
@@ -11,6 +12,7 @@ export default function HomePage({ posts }) {
       <About />
       <Work />
       <Blog posts={posts} />
+      <Contact />
     </div>
   );
 }

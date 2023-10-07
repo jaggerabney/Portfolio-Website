@@ -16,5 +16,8 @@
     "react-json-pretty": "^2.2.0",
     "react-markdown": "^8.0.7",
     "react-syntax-highlighter": "^15.5.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0"
   }
 }
