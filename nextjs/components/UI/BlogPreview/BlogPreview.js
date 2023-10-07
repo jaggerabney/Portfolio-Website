@@ -21,8 +21,11 @@ export default function BlogPreview({ post }) {
         />
       </Link>
       <div className={classes.content}>
-        <h1 className={classes.title}>{title}</h1>
-        <time className={classes.date}>{date}</time>
+        <div className={classes.wrapper}>
+          <h1 className={classes.title}>{title}</h1>
+          {" - "}
+          <time className={classes.date}>{date}</time>
+        </div>
         <p className={classes.excerpt}>{excerpt}</p>
       </div>
     </Window>

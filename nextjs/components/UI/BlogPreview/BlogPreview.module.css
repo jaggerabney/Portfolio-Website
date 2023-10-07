@@ -39,3 +39,10 @@
   gap: 2vh;
   padding: 2vh;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
