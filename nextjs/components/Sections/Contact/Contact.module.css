@@ -1,0 +1,67 @@
+.content {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-bottom: 5vh;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.window {
+  width: auto;
+  justify-content: flex-end;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.windowInner {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+.article {
+  font-size: 24px;
+  font-weight: 200;
+  justify-content: flex-end;
+  align-self: flex-end;
+  text-align: right;
+  width: 50%;
+  color: #f5f5f5;
+}
+
+.items {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 1em;
+}
+
+.item {
+  display: flex;
+  gap: 1em;
+  font-weight: 200;
+}
+
+.item p a {
+  text-decoration: none;
+  color: white;
+}
+
+.item p a:hover,
+.item p a:active {
+  text-decoration: underline;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

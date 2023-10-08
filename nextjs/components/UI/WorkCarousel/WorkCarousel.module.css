@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+}
+
+.window {
+  display: flex;
+  flex-direction: row;
+  align-items: space-evenly;
+  gap: 5vh;
+  width: 50vw;
+  z-index: 0;
+}
+
+.left {
+  animation: 0.5s ease-in-out forwards slide-left;
+}
+
+.right {
+  animation: 0.5s ease-in-out forwards slide-right;
+}
+
+.button {
+  border: 1px solid #252526;
+  background-color: #525256;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 3vw;
+  height: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  user-select: none;
+  z-index: 10;
+}
+
+.leftButton {
+  left: 11vw;
+}
+
+.rightButton {
+  right: 11vw;
+}
+
+.button:hover {
+  background-color: #303030;
+}
+
+@keyframes slide-left {
+  from {
+    /* 
+          Previews move instantaneously via a state update, so this animation puts them
+          back to where they were pre-update and slides them over
+        */
+
+    transform: translate(-42vw);
+  }
+
+  to {
+    transform: 0;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translate(42vw);
+  }
+
+  to {
+    transform: 0;
+  }
+}

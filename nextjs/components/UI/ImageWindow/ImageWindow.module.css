@@ -1,0 +1,11 @@
+.window {
+  position: relative;
+  height: calc(100% - 5vh);
+  overflow: hidden;
+}
+
+.image {
+  display: inline;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
