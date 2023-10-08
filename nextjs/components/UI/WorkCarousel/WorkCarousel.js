@@ -38,7 +38,9 @@ export default function WorkCarousel({ data }) {
   return (
     <div className={classes.container}>
       <Preview
-        className={slideDirection ? classes[slideDirection] : ""}
+        className={`${classes.preview} ${
+          slideDirection ? classes[slideDirection] : ""
+        }`}
         key={prevPrevWindow.id + Math.random()}
         link={null}
         imageName={prevPrevWindow.imageName}
@@ -46,7 +48,9 @@ export default function WorkCarousel({ data }) {
         description={prevPrevWindow.description}
       />
       <Preview
-        className={slideDirection ? classes[slideDirection] : ""}
+        className={`${classes.preview} ${
+          slideDirection ? classes[slideDirection] : ""
+        }`}
         key={prevWindow.id}
         link={null}
         imageName={prevWindow.imageName}
@@ -64,7 +68,9 @@ export default function WorkCarousel({ data }) {
         {"<"}
       </div>
       <Preview
-        className={slideDirection ? classes[slideDirection] : ""}
+        className={`${classes.preview} ${
+          slideDirection ? classes[slideDirection] : ""
+        }`}
         key={activeWindow.id}
         link={activeWindow.link}
         imageName={activeWindow.imageName}
@@ -82,7 +88,9 @@ export default function WorkCarousel({ data }) {
         {">"}
       </div>
       <Preview
-        className={slideDirection ? classes[slideDirection] : ""}
+        className={`${classes.preview} ${
+          slideDirection ? classes[slideDirection] : ""
+        }`}
         key={nextWindow.id}
         link={null}
         imageName={nextWindow.imageName}
@@ -90,7 +98,9 @@ export default function WorkCarousel({ data }) {
         description={nextWindow.description}
       />
       <Preview
-        className={slideDirection ? classes[slideDirection] : ""}
+        className={`${classes.preview} ${
+          slideDirection ? classes[slideDirection] : ""
+        }`}
         key={nextNextWindow.id + Math.random()}
         link={null}
         imageName={nextNextWindow.imageName}

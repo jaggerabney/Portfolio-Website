@@ -10,7 +10,7 @@ export default function Preview({
   description,
 }) {
   return (
-    <Window outerClassName={className} innerClassName={classes.preview}>
+    <Window outerClassName={className}>
       <a href={link} target="_blank" rel="noreferrer">
         <img
           className={classes.image}
@@ -19,7 +19,7 @@ export default function Preview({
         />
       </a>
       <h3 className={classes.title}>{title}</h3>
-      <p className={classes.description}>{description}</p>
+      <div className={classes.description}>{description}</div>
     </Window>
   );
 }
