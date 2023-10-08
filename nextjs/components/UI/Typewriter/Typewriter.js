@@ -20,7 +20,7 @@ export default function Typewriter({ text }) {
 
   return (
     <div className={classes.wrapper}>
-      <h1>
+      <h1 className={classes.heading}>
         <span className={classes.text}>{currentText}</span>
         <span
           className={`${classes.pipe} ${

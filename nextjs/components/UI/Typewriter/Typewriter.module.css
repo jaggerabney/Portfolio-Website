@@ -4,6 +4,10 @@
   font-weight: 900;
 }
 
+.heading {
+  margin-top: 3vh;
+}
+
 .pipe {
   color: #ccc;
   font-size: 60px;
