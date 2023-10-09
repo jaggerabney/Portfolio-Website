@@ -1,3 +1,4 @@
+import Section from "../../UI/Section/Section";
 import Typewriter from "../../UI/Typewriter/Typewriter";
 import Article from "../../UI/Article/Article";
 
@@ -5,7 +6,7 @@ import classes from "./Home.module.css";
 
 export default function Home() {
   return (
-    <section className={classes.content}>
+    <Section className={classes.content}>
       <Typewriter text="Hey! I'm Jagger. Welcome to my website." />
       <div className={classes.spacer} />
       <Article className={classes.text}>
@@ -16,6 +17,6 @@ export default function Home() {
         itch quite like it...and hey, it pays well, too. Scroll down to see a
         little more about myself and my work!
       </Article>
-    </section>
+    </Section>
   );
 }

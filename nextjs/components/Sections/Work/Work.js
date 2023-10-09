@@ -1,3 +1,4 @@
+import Section from "../../UI/Section/Section";
 import Typewriter from "../../UI/Typewriter/Typewriter";
 import WorkCarousel from "../../UI/WorkCarousel/WorkCarousel";
 
@@ -38,9 +39,9 @@ export const DUMMY_WORK = [
 
 export default function Work() {
   return (
-    <section className={classes.content}>
+    <Section className={classes.content}>
       <Typewriter text="How about a look at my work?" />
       <WorkCarousel data={DUMMY_WORK} />
-    </section>
+    </Section>
   );
 }

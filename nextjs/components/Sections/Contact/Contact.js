@@ -1,3 +1,4 @@
+import Section from "../../UI/Section/Section";
 import Typewriter from "../../UI/Typewriter/Typewriter";
 import Window from "../../UI/Window/Window";
 import Article from "../../UI/Article/Article";
@@ -9,7 +10,7 @@ import classes from "./Contact.module.css";
 
 export default function Contact() {
   return (
-    <section className={classes.content}>
+    <Section className={classes.content}>
       <Typewriter text="Let's get in touch!" />
       <div className={classes.spacer} />
       <div className={classes.wrapper}>
@@ -53,6 +54,6 @@ export default function Contact() {
           at any of the accounts listed below.
         </Article>
       </div>
-    </section>
+    </Section>
   );
 }

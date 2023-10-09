@@ -1,9 +1,4 @@
 .content {
-  width: 100%;
-  height: var(--section-height);
-  display: flex;
-  flex-direction: column;
-  margin: 0;
   margin-bottom: var(--contact-section-bottom-margin);
 }
 

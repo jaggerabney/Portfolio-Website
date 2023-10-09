@@ -1,7 +1,3 @@
 .content {
-  width: 100%;
-  height: var(--section-height);
-  display: flex;
-  flex-direction: column;
-  margin: 0;
+  gap: var(--section-gap);
 }
