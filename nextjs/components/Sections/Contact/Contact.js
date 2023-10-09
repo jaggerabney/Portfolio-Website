@@ -7,6 +7,7 @@ import EmailIcon from "/public/images/contact/email-logo.svg";
 import GithubIcon from "/public/images/contact/github-logo.svg";
 import LinkedInIcon from "/public/images/contact/linkedin-logo.svg";
 import classes from "./Contact.module.css";
+import ContactItem from "../../UI/ContactItem/ContactItem";
 
 export default function Contact() {
   return (
@@ -19,33 +20,21 @@ export default function Contact() {
           innerClassName={classes.windowInner}
         >
           <ul className={classes.items}>
-            <li className={classes.item}>
-              <p>
-                <a href="mailto:jagger.abney@gmail.com">
-                  jagger.abney@gmail.com
-                </a>
-              </p>
-              <EmailIcon style={{ height: 48, width: 48 }} fill="white" />
-            </li>
-            <li className={classes.item}>
-              <p>
-                <a target="_blank" href="https://github.com/jaggerabney">
-                  github.com/jaggerabney
-                </a>
-              </p>
-              <GithubIcon style={{ height: 48, width: 48 }} fill="white" />
-            </li>
-            <li className={classes.item}>
-              <p>
-                <a
-                  href="https://www.linkedin.com/in/jaggerabney/"
-                  target="_blank"
-                >
-                  linkedin.com/in/jaggerabney
-                </a>
-              </p>
-              <LinkedInIcon style={{ height: 48, width: 48 }} fill="white" />
-            </li>
+            <ContactItem
+              linkUrl="mailto:jagger.abney@gmail.com"
+              linkText="jagger.abney@gmail.com"
+              Icon={EmailIcon}
+            />
+            <ContactItem
+              linkUrl="https://github.com/jaggerabney"
+              linkText="github.com/jaggerabney"
+              Icon={GithubIcon}
+            />
+            <ContactItem
+              linkUrl="https://www.linkedin.com/in/jaggerabney/"
+              linkText="linkedin.com/in/jaggerabney"
+              Icon={LinkedInIcon}
+            />
           </ul>
         </Window>
         <Article className={classes.text}>
