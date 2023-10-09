@@ -2,9 +2,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0.9;
+  opacity: var(--background-blur-opacity);
   height: 100vh;
   width: 100vw;
-  background-color: #11160c;
+  background-color: var(--page-background);
   z-index: 1;
 }

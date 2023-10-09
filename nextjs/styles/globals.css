@@ -1,0 +1,71 @@
+:root {
+  /* colors */
+  --text-color: #f5f5f5;
+  --text-color-alt: #ccc;
+  --window-background: #252526;
+  --window-alt: #525256;
+  --window-tab-bar: #3e3e42;
+  --window-close: #ff605c;
+  --window-minimize: #ffbd44;
+  --window-fullscreen: #00ca4e;
+  --code-window-field: #9cdcfe;
+  --code-window-value: #ce9178;
+  --code-window-comment: #6a9955;
+  --code-window-number: #b5cea8;
+  --code-window-outer: #ffd700;
+  --code-window-inner: #da70d6;
+  --code-window-array: #179fff;
+  --code-window-tab-logo: yellow;
+  --page-background: #11160c;
+  --carousel-button-alt: #303030;
+  --blog-carousel-button-box-shadow-color: rgba(0, 0, 0, 0.25);
+
+  /* measurements */
+  --text-font-size: 24px;
+  --text-font-size-alt: 18px;
+  --text-font-weight: 200;
+  --background-blur-opacity: 0.9;
+  --navbar-height: 10vh;
+  --navbar-blur: 4px;
+  --navbar-font-size: 28px;
+  --navbar-font-weight: 200;
+  --navbar-font-weight-alt: 300;
+  --section-height: 85vh;
+  --section-gap: 3vh;
+  --home-section-content-width: 75%;
+  --blog-detail-h1-font-size: 60px;
+  --blog-detail-h1-font-weight: 900;
+  --blog-detail-h2-font-size: 48px;
+  --blog-detail-h2-font-weight: 400;
+  --blog-detail-h3-font-size: 36px;
+  --blog-detail-h3-font-weight: 300;
+  --contact-section-bottom-margin: 5vh;
+  --contact-section-content-width: 50%;
+  --contact-section-items-gap: 1em;
+  --blog-carousel-item-gap: 2vw;
+  --blog-carousel-button-size: 3vw;
+  --blog-carousel-button-offset: 11vw;
+  --blog-preview-title-date-gap: 8px;
+  --code-window-editor-margin: 1em 2vh;
+  --code-window-editor-line-height: 1.75;
+  --window-tab-font-size: 20px;
+  --window-tab-gap: 1vh;
+  --window-tab-padding: 0 0.5vh;
+  --window-tab-font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans,
+    Helvetica Neue, Arial, sans-serif;
+  --window-tab-height: 5vh;
+  --window-border-radius: 16px;
+  --window-top-bar-height: 5vh;
+  --window-top-bar-border-radius: 16px 16px 0 0;
+  --window-action-button-size: 3vh;
+  --window-editor-font-family: "Consolas", "Courier New", monospace;
+  --preview-width: 40vw;
+  --preview-padding: 2vh;
+  --preview-title-font-size: 2.5vh;
+  --preview-title-font-weight: 600;
+  --typewriter-font-size: 60px;
+  --typewriter-font-weight: 900;
+  --typewriter-top-margin: 3vh;
+  --typewriter-pipe-weight: 400;
+  --work-carousel-gap: 2vw;
+}

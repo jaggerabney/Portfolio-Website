@@ -19,17 +19,13 @@ export default function Typewriter({ text }) {
   }, [index]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className={classes.wrapper}>
-      <h1 className={classes.heading}>
-        <span className={classes.text}>{currentText}</span>
-        <span
-          className={`${classes.pipe} ${
-            doneTyping ? classes["pipe-idle"] : ""
-          }`}
-        >
-          |
-        </span>
-      </h1>
-    </div>
+    <h1 className={classes.heading}>
+      <span className={classes.text}>{currentText}</span>
+      <span
+        className={`${classes.pipe} ${doneTyping ? classes["pipe-idle"] : ""}`}
+      >
+        |
+      </span>
+    </h1>
   );
 }

@@ -8,8 +8,6 @@ import classes from "./BlogPreview.module.css";
 export default function BlogPreview({ post }) {
   const { slug, title, imageName, date, excerpt } = post;
 
-  console.log(post);
-
   return (
     <Window innerClassName={classes.window}>
       <Link href={`/blog/${slug}`}>

@@ -8,22 +8,22 @@
   display: flex;
   flex-direction: column;
   padding-inline-start: 0;
-  margin: 1em 2vh;
+  margin: var(--code-window-editor-margin);
 }
 
 .numbers li {
   list-style: none;
   font-family: "Consolas", "Courier New", monospace;
   text-align: right;
-  color: #ccc;
   font-size: auto;
+  color: var(--text-color-alt);
 }
 
 .code {
   font-family: "Consolas", "Courier New", monospace;
   font-size: auto;
-  color: #f5f5f5;
-  margin: 1em 2vh;
+  color: var(--text-color);
+  margin: var(--code-window-editor-margin);
 }
 
 .code span {
@@ -31,28 +31,22 @@
 }
 
 .string {
-  color: #ce9178;
+  color: var(--code-window-value);
 }
 .number {
-  color: #b5cea8;
-}
-.boolean {
-  color: blue;
-}
-.null {
-  color: magenta;
+  color: var(--code-window-number);
 }
 .key {
-  color: #9cdcfe;
+  color: var(--code-window-field);
 }
 .string .bracket {
-  color: #f5f5f5;
+  color: var(--text-color);
 }
 
 .editor {
   display: flex;
   flex-direction: row;
-  line-height: 1.75;
+  line-height: var(--code-window-editor-line-height);
 }
 
 .lower-bar {
@@ -65,23 +59,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1vh;
-  background-color: #252526;
-  color: #f5f5f5;
-  font-size: 20px;
-  margin: 1vh;
-  padding: 0 0.5vh;
   white-space: nowrap;
-  font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans,
-    Helvetica Neue, Arial, sans-serif;
+  gap: var(--window-tab-gap);
+  background-color: var(--window-background);
+  color: var(--text-color);
+  font-size: var(--window-tab-font-size);
+  margin: var(--window-tab-gap);
+  padding: var(--window-tab-padding);
+  font-family: var(--code-window-tab-font-family);
 }
 
 .logo {
-  color: yellow;
+  color: var(--code-window-tab-logo);
 }
 
 .tab-bar {
-  background-color: #3e3e42;
   width: 100%;
-  height: 5vh;
+  background-color: var(--window-tab-bar);
+  height: var(--code-window-tab-height);
 }
