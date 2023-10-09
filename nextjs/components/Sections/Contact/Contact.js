@@ -1,7 +1,6 @@
-import Image from "next/image";
-
 import Typewriter from "../../UI/Typewriter/Typewriter";
 import Window from "../../UI/Window/Window";
+import Article from "../../UI/Article/Article";
 
 import EmailIcon from "/public/images/contact/email-logo.svg";
 import GithubIcon from "/public/images/contact/github-logo.svg";
@@ -48,11 +47,11 @@ export default function Contact() {
             </li>
           </ul>
         </Window>
-        <article className={classes.article}>
+        <Article className={classes.text}>
           Like what you see? Let's work together! Send an email to the following
           address and I'll get back to you ASAP. Alternatively, you can find me
           at any of the accounts listed below.
-        </article>
+        </Article>
       </div>
     </section>
   );

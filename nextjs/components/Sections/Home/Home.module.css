@@ -10,12 +10,6 @@
   flex-grow: 1;
 }
 
-.article {
-  font-size: var(--text-font-size);
-  font-weight: var(--text-font-weight);
-  justify-content: flex-end;
-  align-self: flex-end;
-  text-align: right;
-  width: var(--home-section-content-width);
-  color: var(--text-color);
+.text {
+  width: 75%;
 }

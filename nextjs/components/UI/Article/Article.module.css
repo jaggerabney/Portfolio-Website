@@ -1,0 +1,8 @@
+.article {
+  font-size: var(--text-font-size);
+  font-weight: var(--text-font-weight);
+  justify-content: flex-end;
+  align-self: flex-end;
+  text-align: right;
+  color: var(--text-color);
+}
