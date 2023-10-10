@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 import Navbar from "../components/Layout/Navbar/Navbar";
 import BackgroundImage from "../components/Layout/BackgroundImage/BackgroundImage";
 import BackgroundBlur from "../components/Layout/BackgroundBlur/BackgroundBlur";
@@ -10,13 +8,13 @@ import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className="app">
+    <>
+      <Navbar className="navbar" />
       <div className="content">
-        <Navbar />
         <Component {...pageProps} />
       </div>
       <BackgroundImage src={bgImage} alt="Background" />
       <BackgroundBlur />
-    </div>
+    </>
   );
 }
