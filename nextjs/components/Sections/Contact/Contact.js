@@ -38,9 +38,9 @@ export default function Contact() {
           </ul>
         </Window>
         <Article className={classes.text}>
-          Like what you see? Let's work together! Send an email to the following
-          address and I'll get back to you ASAP. Alternatively, you can find me
-          at any of the accounts listed below.
+          Like what you see? Let's work together! Send an email to the address
+          above and I'll get back to you ASAP. Alternatively, you can find me on
+          GitHub and LinkedIn.
         </Article>
       </div>
     </Section>

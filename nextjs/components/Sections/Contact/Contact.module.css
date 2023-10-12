@@ -58,7 +58,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--contact-section-items-gap);
+  gap: var(--section-gap);
 }
 
 .text {
