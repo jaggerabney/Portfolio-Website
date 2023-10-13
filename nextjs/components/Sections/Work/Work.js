@@ -39,7 +39,7 @@ export const DUMMY_WORK = [
 
 export default function Work() {
   return (
-    <Section className={classes.content}>
+    <Section id="work" className={classes.content}>
       <Typewriter text="How about a look at my work?" />
       <WorkCarousel data={DUMMY_WORK} />
     </Section>

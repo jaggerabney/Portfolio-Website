@@ -31,9 +31,8 @@ export function SectionContextProvider({ children }) {
       const sectionIndex = Math.round(scrollPos / sectionHeight) - sectionGap;
 
       if (sectionIndex !== activeSectionIndex) {
-        console.log("Active section updated");
-
         setActiveSectionIndex(sectionIndex);
+
         window.history.replaceState("", "", `/${items[sectionIndex]}`);
       }
     }

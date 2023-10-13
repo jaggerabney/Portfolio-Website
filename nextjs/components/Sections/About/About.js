@@ -7,7 +7,7 @@ import classes from "./About.module.css";
 
 export default function About() {
   return (
-    <Section className={classes.content}>
+    <Section id="about" className={classes.content}>
       <Typewriter text="Here's a little bit about me." />
       <div className={classes.windows}>
         <CodeWindow outerClassName={classes.code} />

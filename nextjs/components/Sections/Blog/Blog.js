@@ -6,7 +6,7 @@ import classes from "./Blog.module.css";
 
 export default function Blog({ posts }) {
   return (
-    <Section className={classes.content}>
+    <Section id="blog" className={classes.content}>
       <Typewriter text="Want to hear what I have to say?" />
       <BlogCarousel posts={posts} />
     </Section>

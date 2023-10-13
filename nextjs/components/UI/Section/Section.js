@@ -1,7 +1,9 @@
 import classes from "./Section.module.css";
 
-export default function Section({ children, className }) {
+export default function Section({ children, className, id }) {
   return (
-    <section className={`${className} ${classes.section} `}>{children}</section>
+    <section id={id} className={`${className} ${classes.section} `}>
+      {children}
+    </section>
   );
 }

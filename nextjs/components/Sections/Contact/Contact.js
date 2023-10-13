@@ -11,7 +11,7 @@ import ContactItem from "../../UI/ContactItem/ContactItem";
 
 export default function Contact() {
   return (
-    <Section className={classes.content}>
+    <Section id="contact" className={classes.content}>
       <Typewriter text="Let's get in touch!" />
       <div className={classes.spacer} />
       <div className={classes.wrapper}>

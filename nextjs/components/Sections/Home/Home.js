@@ -6,7 +6,7 @@ import classes from "./Home.module.css";
 
 export default function Home() {
   return (
-    <Section>
+    <Section id="home">
       <Typewriter text="Hey! I'm Jagger. Welcome to my website." />
       <div className={classes.spacer} />
       <Article className={classes.text}>
