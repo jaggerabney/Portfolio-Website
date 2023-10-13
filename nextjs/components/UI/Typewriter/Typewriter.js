@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import classes from "./Typewriter.module.css";
 
@@ -6,9 +6,21 @@ export default function Typewriter({ text }) {
   const [currentText, setCurrentText] = useState("");
   const [index, setIndex] = useState(0);
   const [doneTyping, setDoneTyping] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const h1ref = useRef();
 
   useEffect(() => {
-    if (index < text.length) {
+    const observer = new IntersectionObserver((entries) => {
+      const [entry] = entries;
+
+      setIsVisible(entry.isIntersecting);
+    });
+
+    observer.observe(h1ref.current);
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && index < text.length) {
       setTimeout(() => {
         setCurrentText(currentText + text[index]);
         setIndex(index + 1);
@@ -16,10 +28,10 @@ export default function Typewriter({ text }) {
     } else {
       setDoneTyping(true);
     }
-  }, [index]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [index, isVisible]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <h1 className={classes.heading}>
+    <h1 ref={h1ref} className={classes.heading}>
       <span className={classes.text}>{currentText}</span>
       <span
         className={`${classes.pipe} ${doneTyping ? classes["pipe-idle"] : ""}`}
