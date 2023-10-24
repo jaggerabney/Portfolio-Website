@@ -1,17 +1,22 @@
+.outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .container {
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  gap: var(--blog-carousel-item-gap);
+  gap: var(--work-carousel-gap);
+  height: 100%;
+  transition: left 0.5s;
 }
 
-.left {
-  animation: 0.5s ease-in-out forwards slide-left;
-}
-
-.right {
-  animation: 0.5s ease-in-out forwards slide-right;
+.preview {
+  height: 100%;
+  width: var(--preview-width);
 }
 
 .button {
@@ -42,6 +47,25 @@
 }
 
 .button:hover {
-  border-color: var(--carousel-button-alt);
   background-color: var(--carousel-button-alt);
+}
+
+@keyframes slide-left {
+  from {
+    transform: 0;
+  }
+
+  to {
+    transform: translate(42vw);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: 0;
+  }
+
+  to {
+    transform: translate(-42vw);
+  }
 }

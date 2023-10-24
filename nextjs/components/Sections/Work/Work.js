@@ -1,6 +1,6 @@
 import Section from "../../UI/Section/Section";
 import Typewriter from "../../UI/Typewriter/Typewriter";
-import WorkCarousel from "../../UI/WorkCarousel/WorkCarousel";
+import Carousel from "../../UI/Carousel/Carousel";
 
 import classes from "./Work.module.css";
 
@@ -8,7 +8,7 @@ export const DUMMY_WORK = [
   {
     id: "w1",
     link: "https://react-meetups-jaggerabney.vercel.app/",
-    imageName: "React-The-Complete-Guide-Project.png",
+    imageName: "work/React-The-Complete-Guide-Project.png",
     title: `"React - The Complete Guide" Final Project`,
     description: `The final project that I made for the "React - The Complete Guide" course on Udemy.
         It's a mock meetup sharing website that uses Firebase to store posts in a database.
@@ -18,7 +18,7 @@ export const DUMMY_WORK = [
   {
     id: "w2",
     link: "https://nodejs-complete-guide-final.onrender.com/",
-    imageName: "NodeJS-The-Complete-Guide-Project.png",
+    imageName: "work/NodeJS-The-Complete-Guide-Project.png",
     title: `"NodeJS - The Complete Guide" Final Project`,
     description: `The final project that I made for the "NodeJS - The Complete Guide" course on Udemy.
         It's a mock shopping website that is statically generated, RESTful, and has authentication.
@@ -28,7 +28,7 @@ export const DUMMY_WORK = [
   {
     id: "w3",
     link: "https://csci-102-final.onrender.com/index.html",
-    imageName: "Undead-Settlement-Photography.png",
+    imageName: "work/Undead-Settlement-Photography.png",
     title: "CSCI 102 Final Project",
     description: `My final project for CSCI 102 - Website Development - at Highline College.
         It's a mock company website for a photography company based in the world of Dark Souls 3.
@@ -41,7 +41,7 @@ export default function Work() {
   return (
     <Section id="work" className={classes.content}>
       <Typewriter text="How about a look at my work?" />
-      <WorkCarousel data={DUMMY_WORK} />
+      <Carousel posts={DUMMY_WORK} />
     </Section>
   );
 }
