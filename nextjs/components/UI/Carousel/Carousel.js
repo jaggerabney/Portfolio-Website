@@ -1,14 +1,12 @@
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Preview from "../Preview/Preview";
-import SectionContext from "../../../store/section-context";
 
 import classes from "./Carousel.module.css";
 
 let previewWidth, gap;
 
 export default function Carousel({ posts }) {
-  const sectionContext = useContext(SectionContext);
   const [activeWindowIndex, setActiveWindowIndex] = useState(0);
   const [xOffset, setXOffset] = useState(0);
   const containerRef = useRef();
@@ -57,8 +55,8 @@ export default function Carousel({ posts }) {
       >
         {posts.map((post) => (
           <Preview
+            key={post.slug || post.id}
             className={classes.preview}
-            key={post.id}
             link={post.link}
             imageName={post.imageName}
             title={post.title}

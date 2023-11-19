@@ -11,12 +11,6 @@ import "../styles/_app.css";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  // useEffect(() => {
-  //   window.addEventListener("popstate", function (e) {
-  //     window.location.reload();
-  //   });
-  // }, []);
-
   return (
     <SectionContextProvider>
       <Navbar className="navbar" />

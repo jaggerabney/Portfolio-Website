@@ -23,7 +23,7 @@ export default function Transition({ children }) {
   const { asPath } = useRouter();
 
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div>
       <AnimatePresence
         initial={false}
         mode="wait"

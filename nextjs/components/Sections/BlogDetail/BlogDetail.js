@@ -9,8 +9,9 @@ import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 
+import BackButton from "../../UI/BackButton/BackButton";
+
 import classes from "./BlogDetail.module.css";
-import BackButton from "../BackButton/BackButton";
 
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("css", css);

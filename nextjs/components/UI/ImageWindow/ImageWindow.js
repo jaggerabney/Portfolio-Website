@@ -14,6 +14,7 @@ export default function ImageWindow({ outerClassName }) {
         style={{ objectFit: "cover" }}
         className={classes.image}
         src={portrait}
+        alt={"A picture of Jagger Abney."}
       />
     </Window>
   );
