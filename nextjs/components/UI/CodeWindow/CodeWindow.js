@@ -5,7 +5,7 @@ import classes from "./CodeWindow.module.css";
 
 const DUMMY_DATA = {
   name: "Jagger Abney",
-  age: 22,
+  age: 23,
   pronouns: "he/him",
   languages: {
     fluent: ["Java", "HTML", "CSS", "JavaScript", "NoSQL"],

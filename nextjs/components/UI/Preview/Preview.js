@@ -9,16 +9,18 @@ export default function Preview({
   link,
   title,
   description,
+  onClick,
 }) {
   let linkComponent = <></>;
 
   if (link.startsWith("/blog")) {
     linkComponent = (
-      <Link href={link}>
+      <Link href={link} scroll={false}>
         <img
           className={classes.image}
           src={`../../../images/${imageName}`}
           alt={title}
+          onClick={onClick}
         />
       </Link>
     );
@@ -26,6 +28,7 @@ export default function Preview({
     linkComponent = (
       <a href={link} target="_blank" rel="noreferrer">
         <img
+          onClick={onClick}
           className={classes.image}
           src={`../../../images/${imageName}`}
           alt={title}
@@ -35,9 +38,8 @@ export default function Preview({
   }
 
   return (
-    <Window outerClassName={className}>
+    <Window outerClassName={`${className} ${classes.preview}`}>
       {linkComponent}
-
       <h3 className={classes.title}>{title}</h3>
       <div className={classes.description}>{description}</div>
     </Window>

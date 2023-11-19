@@ -39,6 +39,7 @@
   --blog-detail-h2-font-weight: 400;
   --blog-detail-h3-font-size: 36px;
   --blog-detail-h3-font-weight: 300;
+  --blog-detail-padding: 3vh 0;
   --contact-section-bottom-margin: 5vh;
   --contact-section-content-width: 50%;
   --contact-section-items-gap: 1em;
@@ -68,4 +69,5 @@
   --typewriter-top-margin: 3vh;
   --typewriter-pipe-weight: 400;
   --work-carousel-gap: 2vw;
+  --back-button-gap: 1vh;
 }

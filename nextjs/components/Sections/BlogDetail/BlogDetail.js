@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import Head from "next/head";
 import Image from "next/image";
 
 import ReactMarkdown from "react-markdown";
@@ -7,11 +10,14 @@ import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 
 import classes from "./BlogDetail.module.css";
+import BackButton from "../BackButton/BackButton";
 
 SyntaxHighlighter.registerLanguage("js", js);
 SyntaxHighlighter.registerLanguage("css", css);
 
 export default function BlogDetail({ post }) {
+  const router = useRouter();
+
   const reactMarkdownRenderers = {
     img({ src, alt }) {
       return <Image src={`/images/posts/${post.slug}/${src}`} alt={alt} />;
@@ -48,10 +54,16 @@ export default function BlogDetail({ post }) {
   };
 
   return (
-    <article className={classes.content}>
-      <ReactMarkdown components={reactMarkdownRenderers}>
-        {post.content}
-      </ReactMarkdown>
-    </article>
+    <>
+      <Head>
+        <title>{`Jagger Abney - ${post.title}`}</title>
+      </Head>
+      <article className={classes.content}>
+        <BackButton />
+        <ReactMarkdown components={reactMarkdownRenderers}>
+          {post.content}
+        </ReactMarkdown>
+      </article>
+    </>
   );
 }

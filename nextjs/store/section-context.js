@@ -6,12 +6,14 @@ import { items } from "../components/Layout/Navbar/Navbar";
 const SectionContext = createContext({
   activeSectionIndex: 0,
   sections: {},
+  activeSection: "",
   setActiveSectionIndex: (index) => {},
   setSections: (sections) => {},
 });
 
 export function SectionContextProvider({ children }) {
   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+  const [activeSection, setActiveSection] = useState("home");
   const [sections, setSections] = useState();
   const scrollPos = useScrollPos();
 
@@ -27,13 +29,15 @@ export function SectionContextProvider({ children }) {
   }
 
   useEffect(() => {
-    if (sections) {
+    if (sections && !window.location.pathname.includes("/blog/")) {
       const sectionIndex = Math.round(scrollPos / sectionHeight) - sectionGap;
+      const activeSection = items[sectionIndex];
 
-      if (sectionIndex !== activeSectionIndex) {
+      if (sectionIndex !== activeSectionIndex && activeSection !== undefined) {
         setActiveSectionIndex(sectionIndex);
+        setActiveSection(activeSection);
 
-        window.history.replaceState("", "", `/${items[sectionIndex]}`);
+        window.history.replaceState("", "", `/${activeSection}`);
       }
     }
   }, [scrollPos]);
@@ -43,6 +47,7 @@ export function SectionContextProvider({ children }) {
       value={{
         activeSectionIndex,
         sections,
+        activeSection,
         setActiveSectionIndex,
         setSections,
       }}

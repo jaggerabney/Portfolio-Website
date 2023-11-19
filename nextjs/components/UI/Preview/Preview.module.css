@@ -1,3 +1,7 @@
+.preview {
+  height: 100%;
+}
+
 .image {
   width: var(--preview-width);
   height: auto;

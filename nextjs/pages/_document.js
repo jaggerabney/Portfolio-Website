@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { SectionContextProvider } from "../store/section-context";
 
 export default function Document() {
   return (

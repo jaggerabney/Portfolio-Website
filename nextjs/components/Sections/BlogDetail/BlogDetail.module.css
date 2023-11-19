@@ -1,5 +1,6 @@
 .content {
   color: var(--text-color);
+  padding: var(--blog-detail-padding);
 }
 
 .content h1 {
