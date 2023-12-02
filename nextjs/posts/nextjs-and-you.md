@@ -32,7 +32,7 @@ _Italicized text_
 
 [Link!](https://www.markdownguide.org/cheat-sheet/)
 
-![Alt text!]("/images/blog/nextjs-and-you.jpg")
+![Alt text!](example.jpg)
 
 By Jagger Abney
 
