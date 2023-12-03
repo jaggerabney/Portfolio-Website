@@ -61,6 +61,7 @@ export default function Carousel({ posts }) {
             imageName={post.imageName}
             title={post.title}
             description={post.description}
+            date={post.date}
           />
         ))}
       </div>

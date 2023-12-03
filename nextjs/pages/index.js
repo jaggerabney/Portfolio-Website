@@ -8,14 +8,13 @@ import Blog from "../components/Sections/Blog/Blog";
 import Contact from "../components/Sections/Contact/Contact";
 import SectionContext from "../store/section-context";
 import { getAllPosts } from "../util/posts";
+import { capitalizeString } from "../util/string";
 
 export default function HomePage({ aboutJSON, posts }) {
   const sectionContext = useContext(SectionContext);
   const sections = useRef();
 
-  const activeSection =
-    sectionContext.activeSection.charAt(0).toUpperCase() +
-    sectionContext.activeSection.slice(1);
+  const activeSection = capitalizeString(sectionContext.activeSection);
 
   useEffect(() => {
     sectionContext.setActiveSectionIndex(0);

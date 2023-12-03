@@ -48,6 +48,7 @@
 
 .button:hover {
   background-color: var(--carousel-button-alt);
+  border: 1px solid var(--carousel-button-alt);
 }
 
 @keyframes slide-left {

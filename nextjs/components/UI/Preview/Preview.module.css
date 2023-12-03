@@ -21,6 +21,28 @@
   margin: 0;
   color: var(--text-color);
   padding: var(--preview-padding);
+  padding-right: calc(var(--preview-padding) / 3);
   font-size: var(--preview-title-font-size);
   font-weight: var(--preview-title-font-weight);
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.date {
+  /* font-style: italic; */
+  margin: 0;
+  font-weight: var(--text-font-weight);
+  font-size: var(--text-font-size-alt);
+  padding: var(--preview-padding);
+  padding-left: 0;
+}
+
+.hyphen {
+  padding: 0 calc(var(--preview-padding) / 2);
+  font-weight: var(--text-font-weight);
+  font-size: var(--text-font-size-alt);
 }
