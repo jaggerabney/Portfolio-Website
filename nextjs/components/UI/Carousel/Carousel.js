@@ -55,7 +55,7 @@ export default function Carousel({ posts }) {
       >
         {posts.map((post) => (
           <Preview
-            key={post.slug || post.id}
+            key={post.slug || post._id}
             className={classes.preview}
             link={post.link}
             imageName={post.imageName}

@@ -10,7 +10,7 @@ import SectionContext from "../store/section-context";
 import { getAllPosts } from "../util/posts";
 import { capitalizeString } from "../util/string";
 
-export default function HomePage({ aboutJSON, posts }) {
+export default function HomePage({ aboutJSON, workJSON, posts }) {
   const sectionContext = useContext(SectionContext);
   const sections = useRef();
 
@@ -35,7 +35,7 @@ export default function HomePage({ aboutJSON, posts }) {
       <div ref={sections} className="sections">
         <Home />
         <About json={aboutJSON} />
-        <Work />
+        <Work json={workJSON} />
         <Blog posts={posts} />
         <Contact />
       </div>
@@ -46,14 +46,20 @@ export default function HomePage({ aboutJSON, posts }) {
 export async function getStaticProps() {
   const posts = getAllPosts();
 
-  const response = await fetch(
+  const aboutResponse = await fetch(
     `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/about`
   );
-  const aboutJSON = await response.json();
+  const aboutJSON = await aboutResponse.json();
+
+  const workResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/work`
+  );
+  const workJSON = await workResponse.json();
 
   return {
     props: {
       aboutJSON,
+      workJSON,
       posts,
     },
   };
