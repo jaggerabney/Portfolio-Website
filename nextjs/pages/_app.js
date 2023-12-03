@@ -7,17 +7,16 @@ import Transition from "../components/UI/Transition/Transition";
 import { SectionContextProvider } from "../store/section-context";
 import bgImage from "../public/images/backgrounds/Home.jpg";
 
+import classes from "../styles/App.module.css";
 import "../styles/_app.css";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
     <SectionContextProvider>
-      <Navbar className="navbar" />
-      <div id="content" className="content">
-        <Transition>
-          <Component {...pageProps} />
-        </Transition>
+      <Navbar className={classes.navbar} />
+      <div id="content" className={classes.content}>
+        <Component {...pageProps} />
       </div>
       <BackgroundImage src={bgImage} alt="Background" />
       <BackgroundBlur />

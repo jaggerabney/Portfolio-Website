@@ -13,25 +13,3 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-
-.content {
-  width: 80%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: var(--navbar-height);
-  z-index: 2;
-  position: relative;
-}
-
-.navbar {
-  position: fixed;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.sections {
-  display: flex;
-  flex-direction: column;
-  gap: var(--section-gap);
-}
