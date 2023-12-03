@@ -5,12 +5,12 @@ import ImageWindow from "../../UI/ImageWindow/ImageWindow";
 
 import classes from "./About.module.css";
 
-export default function About() {
+export default function About({ json }) {
   return (
     <Section id="about" className={classes.content}>
       <Typewriter text="Here's a little bit about me." />
       <div className={classes.windows}>
-        <CodeWindow outerClassName={classes.code} />
+        <CodeWindow outerClassName={classes.code} json={json} />
         <ImageWindow outerClassName={classes.image} />
       </div>
     </Section>

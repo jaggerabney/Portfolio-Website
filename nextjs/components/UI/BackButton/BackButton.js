@@ -1,8 +1,9 @@
+import Link from "next/link";
+
 import { IconContext } from "react-icons";
 import { IoIosArrowRoundBack } from "react-icons/io";
 
 import classes from "./BackButton.module.css";
-import Link from "next/link";
 
 export default function BackButton() {
   return (

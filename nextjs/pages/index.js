@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+
 import { useRef, useContext, useEffect } from "react";
 import Head from "next/head";
 
@@ -8,9 +11,9 @@ import Blog from "../components/Sections/Blog/Blog";
 import Contact from "../components/Sections/Contact/Contact";
 import SectionContext from "../store/section-context";
 import { getAllPosts } from "../util/posts";
-import { useState } from "react";
+import { getAboutJSONData } from "../util/about";
 
-export default function HomePage({ posts }) {
+export default function HomePage({ aboutJSON, posts }) {
   const sectionContext = useContext(SectionContext);
   const sections = useRef();
 
@@ -31,7 +34,7 @@ export default function HomePage({ posts }) {
       </Head>
       <div ref={sections} className="sections">
         <Home />
-        <About />
+        <About json={aboutJSON} />
         <Work />
         <Blog posts={posts} />
         <Contact />
@@ -41,10 +44,12 @@ export default function HomePage({ posts }) {
 }
 
 export async function getStaticProps() {
+  const aboutJSON = getAboutJSONData();
   const posts = getAllPosts();
 
   return {
     props: {
+      aboutJSON,
       posts,
     },
   };
