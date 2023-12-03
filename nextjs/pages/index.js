@@ -12,6 +12,8 @@ import SectionContext from "../store/section-context";
 import { getAllPosts } from "../util/posts";
 import { capitalizeString } from "../util/string";
 
+import classes from "../styles/Index.module.css";
+
 export default function HomePage({ aboutJSON, workJSON, blogPosts }) {
   const sectionContext = useContext(SectionContext);
   const sections = useRef();
@@ -34,7 +36,7 @@ export default function HomePage({ aboutJSON, workJSON, blogPosts }) {
       <Head>
         <title>{`Jagger Abney - ${activeSection}`}</title>
       </Head>
-      <div ref={sections} className="sections">
+      <div ref={sections} className={classes.sections}>
         <Home />
         <About json={aboutJSON} />
         <Work json={workJSON} />

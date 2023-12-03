@@ -10,11 +10,11 @@ export default function ImageWindow({ outerClassName }) {
     <Window innerClassName={classes.window} outerClassName={outerClassName}>
       <Image
         fill
-        sizes="500px"
         style={{ objectFit: "cover" }}
         className={classes.image}
         src={portrait}
         alt={"A picture of Jagger Abney."}
+        loading="eager"
       />
     </Window>
   );

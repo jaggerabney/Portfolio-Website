@@ -16,7 +16,7 @@ export default function Preview({
 
   if (link.startsWith("/blog")) {
     linkComponent = (
-      <Link href={link} scroll={false}>
+      <Link href={link} scroll={true}>
         <img
           className={classes.image}
           src={`../../../images/${imageName}`}

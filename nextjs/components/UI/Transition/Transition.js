@@ -27,7 +27,7 @@ export default function Transition({ children }) {
       <AnimatePresence
         initial={false}
         mode="wait"
-        onExitComplete={() => window.scrollTo(0, 0)}
+        // onExitComplete={() => window.scrollTo(0, 0)}
       >
         <motion.div
           key={asPath}
