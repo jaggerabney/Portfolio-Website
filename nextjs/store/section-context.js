@@ -9,6 +9,7 @@ const SectionContext = createContext({
   activeSection: "",
   setActiveSectionIndex: (index) => {},
   setSections: (sections) => {},
+  setActiveSection: (section) => {},
 });
 
 export function SectionContextProvider({ children }) {
@@ -50,6 +51,7 @@ export function SectionContextProvider({ children }) {
         activeSection,
         setActiveSectionIndex,
         setSections,
+        setActiveSection,
       }}
     >
       {children}
