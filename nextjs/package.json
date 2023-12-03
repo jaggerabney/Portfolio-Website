@@ -12,6 +12,7 @@
     "css-unit-converter": "^1.1.2",
     "framer-motion": "^10.16.5",
     "gray-matter": "^4.0.3",
+    "mongodb": "^6.3.0",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",

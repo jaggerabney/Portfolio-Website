@@ -44,8 +44,12 @@ export default function HomePage({ aboutJSON, posts }) {
 }
 
 export async function getStaticProps() {
-  const aboutJSON = getAboutJSONData();
   const posts = getAllPosts();
+
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/about`
+  );
+  const aboutJSON = await response.json();
 
   return {
     props: {
