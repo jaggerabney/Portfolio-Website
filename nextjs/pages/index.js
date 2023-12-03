@@ -1,6 +1,8 @@
 import { useRef, useContext, useEffect } from "react";
 import Head from "next/head";
 
+import { MongoClient } from "mongodb";
+
 import Home from "../components/Sections/Home/Home";
 import About from "../components/Sections/About/About";
 import Work from "../components/Sections/Work/Work";
@@ -10,7 +12,7 @@ import SectionContext from "../store/section-context";
 import { getAllPosts } from "../util/posts";
 import { capitalizeString } from "../util/string";
 
-export default function HomePage({ aboutJSON, workJSON, posts }) {
+export default function HomePage({ aboutJSON, workJSON, blogPosts }) {
   const sectionContext = useContext(SectionContext);
   const sections = useRef();
 
@@ -36,31 +38,30 @@ export default function HomePage({ aboutJSON, workJSON, posts }) {
         <Home />
         <About json={aboutJSON} />
         <Work json={workJSON} />
-        <Blog posts={posts} />
+        <Blog posts={blogPosts} />
         <Contact />
       </div>
     </>
   );
 }
 
-export async function getStaticProps() {
-  const posts = getAllPosts();
+export async function getServerSideProps() {
+  const blogPosts = getAllPosts();
 
-  const aboutResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/about`
-  );
-  const aboutJSON = await aboutResponse.json();
+  const client = await MongoClient.connect(process.env.DB_CONNECTION_STRING);
+  const db = client.db("test");
 
-  const workResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/work`
-  );
-  const workJSON = await workResponse.json();
+  const aboutJSON = await db
+    .collection("about")
+    .findOne({}, { projection: { _id: 0 } });
+
+  const workJSON = await db.collection("work").find().toArray();
 
   return {
     props: {
-      aboutJSON,
-      workJSON,
-      posts,
+      aboutJSON, // parsing is not needed for aboutJSON because the _id is projected out
+      workJSON: JSON.parse(JSON.stringify(workJSON)),
+      blogPosts,
     },
   };
 }
