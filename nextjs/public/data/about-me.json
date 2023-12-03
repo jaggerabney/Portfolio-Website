@@ -1,0 +1,19 @@
+{
+  "name": "Jagger Abney",
+  "age": 23,
+  "pronouns": "he/him",
+  "languages": {
+    "fluent": ["Java", "HTML", "CSS", "JavaScript", "NoSQL"],
+    "familiar": ["Python", "C++", "C#", "SQL"]
+  },
+  "technologies": {
+    "fluent": ["React", "NodeJS", "Express", "MongoDB", "Next.js"],
+    "familiar": ["React Native", "MySQL"]
+  },
+  "education": {
+    "college": "Highline College",
+    "degree": "Associate's of Science",
+    "major": "Computer Science",
+    "earned": "2021-12-21T04:56:59.000Z"
+  }
+}

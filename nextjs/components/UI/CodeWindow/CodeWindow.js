@@ -3,30 +3,10 @@ import formatJson from "../../../util/json-formatter";
 
 import classes from "./CodeWindow.module.css";
 
-const DUMMY_DATA = {
-  name: "Jagger Abney",
-  age: 22,
-  pronouns: "he/him",
-  languages: {
-    fluent: ["Java", "HTML", "CSS", "JavaScript", "NoSQL"],
-    familiar: ["Python", "C++", "C#", "SQL"],
-  },
-  technologies: {
-    fluent: ["React", "NodeJS", "Express", "MongoDB", "Next.js"],
-    familiar: ["React Native", "MySQL"],
-  },
-  education: {
-    college: "Highline College",
-    degree: "Associate's of Science",
-    major: "Computer Science",
-    earned: "2021-12-21T04:56:59.000Z", // December 2021
-  },
-};
-
-export default function CodeWindow({ outerClassName }) {
+export default function CodeWindow({ outerClassName, json }) {
   const code = formatJson(
     JSON.stringify(
-      DUMMY_DATA,
+      json,
       (k, v) => {
         if (v instanceof Array) return JSON.stringify(v);
         return v;

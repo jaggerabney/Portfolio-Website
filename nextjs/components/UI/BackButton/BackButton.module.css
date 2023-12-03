@@ -1,0 +1,17 @@
+.link {
+  text-decoration: none;
+}
+
+.back {
+  font-size: var(--blog-detail-h3-font-size);
+  font-weight: var(--blog-detail-h3-font-weight);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--back-button-gap);
+}
+
+.back:hover {
+  font-weight: var(--blog-detail-h2-font-weight);
+  cursor: pointer;
+}
