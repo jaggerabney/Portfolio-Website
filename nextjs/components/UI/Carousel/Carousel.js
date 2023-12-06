@@ -1,32 +1,25 @@
 import { useState, useEffect, useRef } from "react";
 
 import Preview from "../Preview/Preview";
+import useCSSProperty from "../../../hooks/use-css-prop";
 
 import classes from "./Carousel.module.css";
 
-let previewWidth, gap;
-
 export default function Carousel({ posts }) {
+  const previewWidthVw = useCSSProperty("--preview-width");
+  const gapVw = useCSSProperty("--work-carousel-gap");
   const [activeWindowIndex, setActiveWindowIndex] = useState(0);
   const [xOffset, setXOffset] = useState(0);
   const containerRef = useRef();
 
-  useEffect(() => {
-    const vwPxScalingFactor = window.innerWidth / 100;
-    const previewWidthVw = Number(
-      getComputedStyle(document.documentElement)
-        .getPropertyValue("--preview-width")
-        .replace(/\D/g, "")
-    );
-    const gapVw = Number(
-      getComputedStyle(document.documentElement)
-        .getPropertyValue("--work-carousel-gap")
-        .replace(/\D/g, "")
-    );
+  let vwPxScalingFactor;
 
-    previewWidth = vwPxScalingFactor * previewWidthVw;
-    gap = vwPxScalingFactor * gapVw;
+  useEffect(() => {
+    vwPxScalingFactor = window.innerWidth / 100;
   }, []);
+
+  const previewWidth = vwPxScalingFactor * previewWidthVw;
+  const gap = vwPxScalingFactor * gapVw;
 
   function changeActiveWindowHandler(direction) {
     if (direction === "left") {

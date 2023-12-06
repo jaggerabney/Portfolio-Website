@@ -2,6 +2,7 @@ import { useState, useEffect, createContext } from "react";
 
 import useScrollPos from "../hooks/use-scroll-pos";
 import { items } from "../components/Layout/Navbar/Navbar";
+import { useRouter } from "next/router";
 
 const SectionContext = createContext({
   activeSectionIndex: 0,
@@ -17,6 +18,7 @@ export function SectionContextProvider({ children }) {
   const [activeSection, setActiveSection] = useState("home");
   const [sections, setSections] = useState();
   const scrollPos = useScrollPos();
+  const router = useRouter();
 
   let sectionHeight, sectionGap;
 
@@ -38,7 +40,11 @@ export function SectionContextProvider({ children }) {
         setActiveSectionIndex(sectionIndex);
         setActiveSection(activeSection);
 
-        window.history.replaceState("", "", `/${activeSection}`);
+        // window.history.replaceState("", "", `/${activeSection}`);
+        router.replace("/", `/${activeSection}`, {
+          shallow: true,
+          scroll: false,
+        });
       }
     }
   }, [scrollPos]);
