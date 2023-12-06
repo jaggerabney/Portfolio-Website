@@ -1,11 +1,12 @@
 .content {
   color: var(--text-color);
-  padding: var(--blog-detail-padding);
+  padding: 0;
 }
 
 .content h1 {
   font-size: var(--blog-detail-h1-font-size);
   font-weight: var(--blog-detail-h1-font-weight);
+  margin: var(--typewriter-top-margin) 0;
 }
 
 .content h2 {
@@ -22,4 +23,20 @@
 .content li {
   font-size: var(--text-font-size);
   font-weight: var(--text-font-weight);
+}
+
+.window {
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWindow {
+  font-size: 0;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  border-bottom-left-radius: var(--window-border-radius);
+  border-bottom-right-radius: var(--window-border-radius);
 }

@@ -4,9 +4,9 @@ import classes from "./Typewriter.module.css";
 
 export default function Typewriter({ text }) {
   const [currentText, setCurrentText] = useState("");
-  const [index, setIndex] = useState(0);
   const [doneTyping, setDoneTyping] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [index, setIndex] = useState(0);
   const h1ref = useRef();
 
   useEffect(() => {
