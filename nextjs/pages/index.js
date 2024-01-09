@@ -1,8 +1,6 @@
 import { useRef, useContext, useEffect } from "react";
 import Head from "next/head";
 
-import { MongoClient } from "mongodb";
-
 import Home from "../components/Sections/Home/Home";
 import About from "../components/Sections/About/About";
 import Work from "../components/Sections/Work/Work";
@@ -11,6 +9,7 @@ import Contact from "../components/Sections/Contact/Contact";
 import SectionContext from "../store/section-context";
 import { getAllPosts } from "../util/posts";
 import { capitalizeString } from "../util/string";
+import { getAboutData, getWorkData } from "../util/db";
 
 import classes from "../styles/Index.module.css";
 
@@ -47,23 +46,16 @@ export default function HomePage({ aboutJSON, workJSON, blogPosts }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  const aboutJSON = await getAboutData();
+  const workJSON = await getWorkData();
   const blogPosts = getAllPosts();
-
-  const client = await MongoClient.connect(process.env.DB_CONNECTION_STRING);
-  const db = client.db("test");
-
-  const aboutJSON = await db
-    .collection("about")
-    .findOne({}, { projection: { _id: 0 } });
-
-  const workJSON = await db.collection("work").find().toArray();
 
   return {
     props: {
       aboutJSON, // parsing is not needed for aboutJSON because the _id is projected out
-      workJSON: JSON.parse(JSON.stringify(workJSON)),
-      blogPosts,
-    },
+      workJSON,
+      blogPosts
+    }
   };
 }
