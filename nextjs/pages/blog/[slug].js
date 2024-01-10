@@ -1,5 +1,5 @@
 import BlogDetail from "../../components/Sections/BlogDetail/BlogDetail";
-import { getAllPostFileNames, getPostData } from "../../util/posts";
+import { getBlogPost, getBlogPostNames } from "../../util/DB.JS";
 
 export default function BlogDetailPage({ post }) {
   return <BlogDetail post={post} />;
@@ -8,28 +8,31 @@ export default function BlogDetailPage({ post }) {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  const post = getPostData(slug);
+  const post = await getBlogPost(`blog/${slug}.md`);
 
   return {
     props: {
-      post,
-    },
+      post
+    }
   };
 }
 
-export function getStaticPaths() {
-  const postFileNames = getAllPostFileNames();
+export async function getStaticPaths() {
+  const postFileNames = await getBlogPostNames();
 
-  const slugs = postFileNames.map((fileName) => {
-    const trimmedFileName = fileName.replace(/\.md$/, "");
+  const paths = postFileNames.map((postSlug) => {
+    const trimmedSlug = postSlug.substring(
+      "/blog".length,
+      postSlug.length - ".md".length
+    );
 
     return {
-      params: { slug: trimmedFileName },
+      params: { slug: trimmedSlug }
     };
   });
 
   return {
-    paths: slugs,
-    fallback: false,
+    paths,
+    fallback: false
   };
 }

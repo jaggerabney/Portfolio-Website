@@ -1,6 +1,9 @@
 module.exports = {
   webpack: (config) => {
-    config.resolve.fallback = { fs: false, path: false };
+    config.resolve.fallback = {
+      fs: false,
+      path: false
+    };
 
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")
@@ -10,13 +13,13 @@ module.exports = {
       {
         ...fileLoaderRule,
         test: /\.svg$/i,
-        resourceQuery: /url/, // *.svg?url
+        resourceQuery: /url/ // *.svg?url
       },
       {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ }, // exclude if *.svg?url
-        use: ["@svgr/webpack"],
+        use: ["@svgr/webpack"]
       }
     );
 
@@ -29,31 +32,31 @@ module.exports = {
       {
         source: "/home",
         destination: "/",
-        permanent: true,
+        permanent: true
       },
       {
         source: "/about",
         destination: "/",
-        permanent: true,
+        permanent: true
       },
       {
         source: "/work",
         destination: "/",
-        permanent: true,
+        permanent: true
       },
       {
         source: "/blog",
         destination: "/",
-        permanent: true,
+        permanent: true
       },
       {
         source: "/contact",
         destination: "/",
-        permanent: true,
-      },
+        permanent: true
+      }
     ];
   },
   experimental: {
-    scrollRestoration: true,
-  },
+    scrollRestoration: true
+  }
 };

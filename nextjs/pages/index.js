@@ -7,9 +7,8 @@ import Work from "../components/Sections/Work/Work";
 import Blog from "../components/Sections/Blog/Blog";
 import Contact from "../components/Sections/Contact/Contact";
 import SectionContext from "../store/section-context";
-import { getAllPosts } from "../util/posts";
 import { capitalizeString } from "../util/string";
-import { getAboutData, getWorkData } from "../util/db";
+import { getAboutData, getWorkData, getBlogData } from "../util/DB.JS";
 
 import classes from "../styles/Index.module.css";
 
@@ -49,11 +48,11 @@ export default function HomePage({ aboutJSON, workJSON, blogPosts }) {
 export async function getStaticProps() {
   const aboutJSON = await getAboutData();
   const workJSON = await getWorkData();
-  const blogPosts = getAllPosts();
+  const blogPosts = await getBlogData();
 
   return {
     props: {
-      aboutJSON, // parsing is not needed for aboutJSON because the _id is projected out
+      aboutJSON,
       workJSON,
       blogPosts
     }
