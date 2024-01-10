@@ -28,6 +28,8 @@ export default async function handler(req, res) {
 
       url = await getSignedUrl(client, command);
     } catch (error) {
+      console.log(error);
+
       return res.status(500).json({ error });
     }
 
