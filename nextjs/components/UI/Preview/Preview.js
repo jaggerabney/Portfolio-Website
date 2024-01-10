@@ -10,7 +10,7 @@ export default function Preview({
   title,
   description,
   onClick,
-  date,
+  date
 }) {
   let linkComponent = <></>;
 
@@ -41,10 +41,7 @@ export default function Preview({
   return (
     <Window outerClassName={`${className} ${classes.preview}`}>
       {linkComponent}
-      <div className={classes.titleWrapper}>
-        <h3 className={classes.title}>{title}</h3>
-        <h3 className={classes.date}>{date && `${" - "}${date}`}</h3>
-      </div>
+      <h3 className={classes.title}>{title}</h3>
       <div className={classes.description}>{description}</div>
     </Window>
   );

@@ -15,13 +15,13 @@
   list-style: none;
   font-family: "Consolas", "Courier New", monospace;
   text-align: right;
-  font-size: auto;
+  font-size: 1.6cqh;
   color: var(--text-color-alt);
 }
 
 .code {
   font-family: "Consolas", "Courier New", monospace;
-  font-size: auto;
+  font-size: 1.6cqh;
   color: var(--text-color);
   margin: var(--code-window-editor-margin);
 }

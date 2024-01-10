@@ -22,7 +22,7 @@
 
   /* measurements */
   --text-font-size: 24px;
-  --text-font-size-alt: 18px;
+  --text-font-size-alt: 16px;
   --text-font-weight: 200;
   --background-blur-opacity: 0.9;
   --navbar-height: 10vh;
@@ -64,6 +64,7 @@
   --preview-padding: 2vh;
   --preview-title-font-size: 2.5vh;
   --preview-title-font-weight: 600;
+  --preview-date-font-size: 1vh;
   --typewriter-font-size: 60px;
   --typewriter-font-weight: 900;
   --typewriter-top-margin: 3vh;
