@@ -6,7 +6,7 @@ import {
 } from "@aws-sdk/client-s3";
 import matter from "gray-matter";
 
-const s3config = {
+const S3_CONFIG = {
   region: process.env.S3_REGION,
   credentials: {
     accessKeyId: process.env.S3_ACCESS_KEY,
@@ -43,7 +43,7 @@ export async function getWorkData() {
 }
 
 export async function getBlogPostNames() {
-  const client = new S3Client(s3config);
+  const client = new S3Client(S3_CONFIG);
   const command = new ListObjectsV2Command({
     Bucket: process.env.S3_BUCKET_NAME,
     MaxKeys: 1000
@@ -68,7 +68,7 @@ export async function getBlogPostNames() {
 }
 
 export async function getBlogPost(postName) {
-  const client = new S3Client(s3config);
+  const client = new S3Client(S3_CONFIG);
   const command = new GetObjectCommand({
     Bucket: process.env.S3_BUCKET_NAME,
     Key: postName

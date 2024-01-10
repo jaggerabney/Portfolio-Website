@@ -3,9 +3,9 @@ import Typewriter from "../../UI/Typewriter/Typewriter";
 import Window from "../../UI/Window/Window";
 import Article from "../../UI/Article/Article";
 
-import EmailIcon from "/public/images/contact/email-logo.svg";
-import GithubIcon from "/public/images/contact/github-logo.svg";
-import LinkedInIcon from "/public/images/contact/linkedin-logo.svg";
+// import EmailIcon from "/public/images/contact/email-logo.svg";
+// import GithubIcon from "/public/images/contact/github-logo.svg";
+// import LinkedInIcon from "/public/images/contact/linkedin-logo.svg";
 import classes from "./Contact.module.css";
 import ContactItem from "../../UI/ContactItem/ContactItem";
 
@@ -23,17 +23,17 @@ export default function Contact() {
             <ContactItem
               linkUrl="mailto:jagger.abney@gmail.com"
               linkText="jagger.abney@gmail.com"
-              Icon={EmailIcon}
+              imageKey="images/contact/email-logo.svg"
             />
             <ContactItem
               linkUrl="https://github.com/jaggerabney"
               linkText="github.com/jaggerabney"
-              Icon={GithubIcon}
+              imageKey="images/contact/github-logo.svg"
             />
             <ContactItem
               linkUrl="https://www.linkedin.com/in/jaggerabney/"
               linkText="linkedin.com/in/jaggerabney"
-              Icon={LinkedInIcon}
+              imageKey="images/contact/linkedin-logo.svg"
             />
           </ul>
         </Window>

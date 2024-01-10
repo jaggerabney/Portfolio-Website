@@ -58,5 +58,11 @@ module.exports = {
   },
   experimental: {
     scrollRestoration: true
+  },
+  images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    domains: ["jagger-abney-portfolio-website.s3.us-west-2.amazonaws.com"]
   }
 };

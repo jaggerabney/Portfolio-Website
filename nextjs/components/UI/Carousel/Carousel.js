@@ -49,7 +49,7 @@ export default function Carousel({ posts }) {
             key={post.slug || post._id}
             className={classes.preview}
             link={post.link}
-            imageName={post.imageName}
+            imageKey={post.imageKey}
             title={post.title}
             description={post.description}
             date={post.date}
