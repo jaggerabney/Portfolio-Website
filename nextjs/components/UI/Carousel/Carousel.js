@@ -2,22 +2,20 @@ import { useState, useEffect, useRef } from "react";
 
 import Preview from "../Preview/Preview";
 import useCSSProperty from "../../../hooks/use-css-prop";
+import useWindowDimensions from "../../../hooks/use-window-dimensions";
 
 import classes from "./Carousel.module.css";
 
 export default function Carousel({ posts }) {
-  const previewWidthVw = useCSSProperty("--preview-width");
-  const gapVw = useCSSProperty("--work-carousel-gap");
   const [activeWindowIndex, setActiveWindowIndex] = useState(0);
   const [xOffset, setXOffset] = useState(0);
   const containerRef = useRef();
 
-  let vwPxScalingFactor;
+  const previewWidthVw = useCSSProperty("--preview-width");
+  const gapVw = useCSSProperty("--work-carousel-gap");
+  const windowDimensions = useWindowDimensions();
 
-  useEffect(() => {
-    vwPxScalingFactor = window.innerWidth / 100;
-  }, []);
-
+  const vwPxScalingFactor = windowDimensions.width / 100;
   const previewWidth = vwPxScalingFactor * previewWidthVw;
   const gap = vwPxScalingFactor * gapVw;
 

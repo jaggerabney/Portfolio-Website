@@ -96,8 +96,6 @@ export async function getBlogPost(postName) {
 export async function getBlogData() {
   const postNames = await getBlogPostNames();
 
-  console.log(`Post names: ${postNames}`);
-
   const posts = await Promise.all(postNames.map(getBlogPost));
   const sortedPosts = posts.sort((post1, post2) =>
     post1.date > post2.date ? -1 : 1

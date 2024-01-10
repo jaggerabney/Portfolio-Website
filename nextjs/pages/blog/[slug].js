@@ -1,5 +1,5 @@
 import BlogDetail from "../../components/Sections/BlogDetail/BlogDetail";
-import { getBlogPost, getBlogPostNames } from "../../util/DB.JS";
+import { getBlogPost, getBlogPostNames } from "../../util/db";
 
 export default function BlogDetailPage({ post }) {
   return <BlogDetail post={post} />;

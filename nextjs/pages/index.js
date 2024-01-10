@@ -8,7 +8,7 @@ import Blog from "../components/Sections/Blog/Blog";
 import Contact from "../components/Sections/Contact/Contact";
 import SectionContext from "../store/section-context";
 import { capitalizeString } from "../util/string";
-import { getAboutData, getWorkData, getBlogData } from "../util/DB.JS";
+import { getAboutData, getWorkData, getBlogData } from "../util/db";
 
 import classes from "../styles/Index.module.css";
 
