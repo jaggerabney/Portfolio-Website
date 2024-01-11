@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -8,7 +9,6 @@ import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
 import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 
-import BackButton from "../../UI/BackButton/BackButton";
 import Window from "../../UI/Window/Window";
 import useCSSProperty from "../../../hooks/use-css-prop";
 
@@ -23,20 +23,38 @@ export default function BlogDetail({ post }) {
 
   const reactMarkdownRenderers = {
     img({ src, alt }) {
+      const imageRef = useRef();
+
+      fetch(`http://localhost:3000/api/image?key=${src}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (imageRef.current) {
+            imageRef.current.src = data.url;
+          }
+        });
+
       return (
         <Window>
-          <Image src={`/images/posts/${post.slug}/${src}`} alt={alt} />
+          <Image ref={imageRef} alt={alt} />
         </Window>
       );
     },
     p({ node, children }) {
       if (node.children[0].tagName === "img") {
         const { properties, alt } = node.children[0];
-        const image = require(`../../../public/images/posts/${post.slug}/${properties.src}`);
+        const imageRef = useRef();
+
+        fetch(`http://localhost:3000/api/image?key=${properties.src}`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (imageRef.current) {
+              imageRef.current.src = data.url;
+            }
+          });
 
         return (
           <Window innerClassName={`${classes.window} ${classes.imageWindow}`}>
-            <Image className={classes.image} src={image} alt={alt} />
+            <Image className={classes.image} alt={alt} ref={imageRef} />
           </Window>
         );
       }
@@ -54,7 +72,7 @@ export default function BlogDetail({ post }) {
             customStyle={{
               margin: 0,
               borderBottomLeftRadius: `${windowBorderRadiusPx}px`,
-              WebkitBorderBottomRightRadius: `${windowBorderRadiusPx}px`,
+              WebkitBorderBottomRightRadius: `${windowBorderRadiusPx}px`
             }}
             language={language}
             children={children}
@@ -68,7 +86,7 @@ export default function BlogDetail({ post }) {
           {children}
         </a>
       );
-    },
+    }
   };
 
   return (
@@ -77,7 +95,6 @@ export default function BlogDetail({ post }) {
         <title>{`Jagger Abney - ${post.title}`}</title>
       </Head>
       <article className={classes.content}>
-        {/* <BackButton /> */}
         <ReactMarkdown components={reactMarkdownRenderers}>
           {post.content}
         </ReactMarkdown>
